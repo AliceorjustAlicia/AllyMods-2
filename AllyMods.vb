@@ -65,25 +65,54 @@ Public Class AllyMods
         End If
 
         For Each selectedItem As ListViewItem In DList.SelectedItems
-            MsgBox(System.IO.Directory.Exists(ActiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower))
+
+
 
             If selectedItem.Selected Then
+
                 ' MsgBox(ActiveMods + currentItem.Text + "." + currentItem.SubItems.Item(1).Text.ToLower) 'debug
-                If File.Exists(InactiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower) Then
-                    File.Move(InactiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower, ActiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower)
 
+
+                Try
+
+                    If File.Exists(InactiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower) Then
+                        File.Move(InactiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower, ActiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower)
+                        RefreshList()
+                    ElseIf Directory.Exists(InactiveMods + selectedItem.Text) Then
+
+                    Else
+
+                        MsgBox(InactiveMods + selectedItem.Text + " is no longer present, did you move it manually?")
                     RefreshList()
+                    Return
+                        End If
 
+                    If Directory.Exists(InactiveMods + selectedItem.Text) Then
+                        Directory.Move(InactiveMods + selectedItem.Text, ActiveMods + selectedItem.Text)
+                        RefreshList()
+                    ElseIf Not File.Exists(InactiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower) Then
 
-                ElseIf Directory.Exists(InactiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower) Then
-                    Directory.Move(InactiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower, ActiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower)
+                    Else
+                        MsgBox(InactiveMods + selectedItem.Text + " is no longer present, did you move it manually?")
+                        RefreshList()
+                            Return
+                        End If
 
-                    RefreshList()
+            Catch ex As Exception
+                        Dim result As DialogResult = MessageBox.Show("The file you are trying to use already exists, would you like to replace it?", "", MessageBoxButtons.YesNo)
 
+                        If result = DialogResult.Yes Then
+                            File.Replace(InactiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower, ActiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower, False)
+                        RefreshList()
+                    Else
+                            Return
+                        End If
+
+                        RefreshList()
+                        Return
+                    End Try
                 End If
-
-            End If
-        Next
+            Next
 
     End Sub
 
@@ -96,23 +125,46 @@ Public Class AllyMods
         For Each selectedItem As ListViewItem In EList.SelectedItems
 
             If selectedItem.Selected Then
-                ' MsgBox(ActiveMods + currentItem.Text + "." + currentItem.SubItems.Item(1).Text.ToLower) 'debug
+                Try
+                    ' MsgBox(ActiveMods + currentItem.Text + "." + currentItem.SubItems.Item(1).Text.ToLower) 'debug
 
 
 
-                If File.Exists(ActiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower) Then
-                    File.Move(ActiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower, InactiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower)
+                    If File.Exists(ActiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower) Then
+                        File.Move(ActiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower, InactiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower)
+                        RefreshList()
+                    ElseIf Directory.Exists(ActiveMods + selectedItem.Text) Then
+
+                    Else
+                        MsgBox(InactiveMods + selectedItem.Text + " is no longer present, did you move it manually?")
+                        RefreshList()
+                        Return
+                    End If
+
+                    If Directory.Exists(ActiveMods + selectedItem.Text) Then
+                        Directory.Move(ActiveMods + selectedItem.Text, InactiveMods + selectedItem.Text)
+                        RefreshList()
+                    ElseIf Not File.Exists(ActiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower) Then
+
+                    Else
+                        MsgBox(InactiveMods + selectedItem.Text + " is no longer present, did you move it manually?")
+                        RefreshList()
+                        Return
+                    End If
+
+                Catch ex As Exception
+                    Dim result As DialogResult = MessageBox.Show("The file you are trying to use already exists, would you like to replace it?", "", MessageBoxButtons.YesNo)
+
+                    If result = DialogResult.Yes Then
+                        File.Replace(ActiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower, InactiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower, False)
+                        RefreshList()
+                    Else
+                        Return
+                    End If
 
                     RefreshList()
-
-
-                ElseIf Directory.Exists(ActiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower) Then
-                    Directory.Move(ActiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower, InactiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower)
-
-                    RefreshList()
-
-                End If
-
+                    Return
+                End Try
             End If
         Next
     End Sub
