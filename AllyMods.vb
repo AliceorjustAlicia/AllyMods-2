@@ -1,12 +1,25 @@
 ﻿Imports System.IO
 Imports Microsoft.VisualBasic.FileIO
 Public Class AllyMods
+    Dim CoreCheckBool As Boolean 'Used for further verification of required game files, check CoreCheck()
+
     Dim ActiveMods As String = SpecialDirectories.MyDocuments + "\Electronic Arts\Sims 4\Mods\"
     Dim InactiveMods As String = SpecialDirectories.MyDocuments + "\Electronic Arts\Sims 4\Inactive\"
-    Dim SimsDocuments As String = SpecialDirectories.MyDocuments + "\Electronic Arts\Sims 4"
+    Dim SimsDocuments As String = SpecialDirectories.MyDocuments + "\Electronic Arts\Sims 4\"
 
     Dim activeinfo As New IO.DirectoryInfo(ActiveMods) ' Already transfer the information of the referenced path to the defined field
     Dim inactiveinfo As New IO.DirectoryInfo(InactiveMods) ' ^
+
+    Private Function CoreCheck()
+        If Not Directory.Exists(SimsDocuments) Or Not Directory.Exists(ActiveMods) Then
+            CoreCheckBool = False 'Inconclusive check
+        Else
+            CoreCheckBool = True 'Conclusive     ^
+        End If
+
+
+        Return 0
+    End Function
 
     Private Function RefreshList()
         EList.Items.Clear()
@@ -48,12 +61,31 @@ Public Class AllyMods
     End Function
     Private Sub AllyMods_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         '--------- Allows the fade transition to be produced smoothly and with no problems by re-appearing the form without opacity (BunifuUI problem)
-
         Me.Visible = False
         Me.Opacity = 0
         Me.Visible = True
         '---------
-        RefreshList()
+
+        '--------- Enable drag-and-drop features
+        EList.AllowDrop = True
+        DList.AllowDrop = True
+        '---------
+
+        CoreCheck() 'Commence a file check
+
+        If CoreCheckBool = True Then
+            RefreshList()
+            Errorlbl.Enabled = False
+        Else 'Disable functionality if Corecheck is not passed
+            Errorlbl.Text = "ERROR"
+            btnEnable.Enabled = False
+            btnDisable.Enabled = False
+            btnRefresh.Enabled = False
+            EList.AllowDrop = False
+            DList.AllowDrop = False
+        End If
+
+        ' RefreshList()
 
     End Sub
 
@@ -83,9 +115,9 @@ Public Class AllyMods
                     Else
 
                         MsgBox(InactiveMods + selectedItem.Text + " is no longer present, did you move it manually?")
-                    RefreshList()
-                    Return
-                        End If
+                        RefreshList()
+                        Return
+                    End If
 
                     If Directory.Exists(InactiveMods + selectedItem.Text) Then
                         Directory.Move(InactiveMods + selectedItem.Text, ActiveMods + selectedItem.Text)
@@ -95,24 +127,28 @@ Public Class AllyMods
                     Else
                         MsgBox(InactiveMods + selectedItem.Text + " is no longer present, did you move it manually?")
                         RefreshList()
-                            Return
-                        End If
+                        Return
+                    End If
 
-            Catch ex As Exception
-                        Dim result As DialogResult = MessageBox.Show("The file you are trying to use already exists, would you like to replace it?", "", MessageBoxButtons.YesNo)
+                Catch ex As Exception 'Catch the exception and handle it with replacing functionality, if the file already exists
+                    If Not File.Exists(InactiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower) And Directory.Exists(InactiveMods + selectedItem.Text) Then
+                        MsgBox(InactiveMods + selectedItem.Text + " is a directory and it already exists, please rename it before attempting to enable.")
+                        Return
+                    End If
+                    Dim result As DialogResult = MessageBox.Show("The file you are trying to use already exists, would you like to replace it?", "", MessageBoxButtons.YesNo)
 
-                        If result = DialogResult.Yes Then
-                            File.Replace(InactiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower, ActiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower, False)
+                    If result = DialogResult.Yes Then
+                        File.Replace(InactiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower, ActiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower, False)
                         RefreshList()
                     Else
-                            Return
-                        End If
-
-                        RefreshList()
                         Return
-                    End Try
-                End If
-            Next
+                    End If
+
+                    RefreshList()
+                    Return
+                End Try
+            End If
+        Next
 
     End Sub
 
@@ -127,8 +163,6 @@ Public Class AllyMods
             If selectedItem.Selected Then
                 Try
                     ' MsgBox(ActiveMods + currentItem.Text + "." + currentItem.SubItems.Item(1).Text.ToLower) 'debug
-
-
 
                     If File.Exists(ActiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower) Then
                         File.Move(ActiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower, InactiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower)
@@ -147,20 +181,26 @@ Public Class AllyMods
                     ElseIf Not File.Exists(ActiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower) Then
 
                     Else
-                        MsgBox(InactiveMods + selectedItem.Text + " is no longer present, did you move it manually?")
+                        MsgBox(InactiveMods + selectedItem.Text + " is no longer present, did you manually move it?")
                         RefreshList()
                         Return
                     End If
 
-                Catch ex As Exception
+                Catch ex As Exception 'Catch the exception and handle it with replacing functionality, if the file already exists
+                    If Not File.Exists(ActiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower) And Directory.Exists(ActiveMods + selectedItem.Text) Then
+                        MsgBox(ActiveMods + selectedItem.Text + " is a directory and it already exists, please rename it before attempting to disable.")
+                        Return
+                    End If
                     Dim result As DialogResult = MessageBox.Show("The file you are trying to use already exists, would you like to replace it?", "", MessageBoxButtons.YesNo)
 
                     If result = DialogResult.Yes Then
+
                         File.Replace(ActiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower, InactiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower, False)
-                        RefreshList()
-                    Else
-                        Return
-                    End If
+                            RefreshList()
+                        Else
+                            Return
+
+                        End If
 
                     RefreshList()
                     Return
@@ -176,5 +216,73 @@ Public Class AllyMods
     Private Sub Fade_Tick(sender As Object, e As EventArgs) Handles Fade.Tick
         FadeManager.ShowAsyc(Me)
         Fade.Enabled = False
+    End Sub
+
+    Private Sub Label1_MouseClick(sender As Object, e As MouseEventArgs) Handles Errorlbl.MouseClick
+        MsgBox("Some of the required files do not exist, AllyMods 2 will probably fail to run various functions. Proceed at your own risk or verify the integrity of your game's files before re-running this software.", MsgBoxStyle.Critical)
+    End Sub
+
+    Private Sub EList_DragDrop(sender As Object, e As DragEventArgs) Handles EList.DragDrop
+        Dim files() As String = e.Data.GetData(DataFormats.FileDrop)
+        For Each path In files
+
+            If File.Exists(path) Then
+                If Not File.Exists(ActiveMods + System.IO.Path.GetFileName(path)) Then
+                    File.Move(path, ActiveMods + System.IO.Path.GetFileName(path))
+                    RefreshList()
+                Else
+                    MsgBox("The file " + System.IO.Path.GetFileName(path) + " already exists on the enabled list and cannot be moved over, please rename it.")
+
+                End If
+            Else
+                If Directory.Exists(path) And Not Directory.Exists(ActiveMods + System.IO.Path.GetFileName(path)) Then
+                    Directory.Move(path, ActiveMods + System.IO.Path.GetFileName(path))
+                    RefreshList()
+                Else
+                    MsgBox("The directory " + System.IO.Path.GetFileName(path) + " already exists on the enabled list and cannot be moved over, please rename it.")
+                    Return
+                End If
+
+            End If
+        Next
+    End Sub
+
+    Private Sub EList_DragEnter(sender As Object, e As DragEventArgs) Handles EList.DragEnter
+        If e.Data.GetDataPresent(DataFormats.FileDrop) Then
+            e.Effect = DragDropEffects.Copy
+        End If
+    End Sub
+
+    Private Sub DList_DragDrop(sender As Object, e As DragEventArgs) Handles DList.DragDrop
+        Dim files() As String = e.Data.GetData(DataFormats.FileDrop)
+        For Each path In files
+
+            If File.Exists(path) Then
+                If Not File.Exists(InactiveMods + System.IO.Path.GetFileName(path)) Then
+                    File.Move(path, InactiveMods + System.IO.Path.GetFileName(path))
+                    RefreshList()
+                Else
+                    MsgBox("The file " + System.IO.Path.GetFileName(path) + " already exists on the disabled list and cannot be moved over, please rename it.")
+
+                End If
+
+
+            Else
+                If Directory.Exists(path) And Not Directory.Exists(InactiveMods + System.IO.Path.GetFileName(path)) Then
+                    Directory.Move(path, InactiveMods + System.IO.Path.GetFileName(path))
+                    RefreshList()
+                Else
+                    MsgBox("The directory " + System.IO.Path.GetFileName(path) + " already exists on the disabled list and cannot be moved over, please rename it.")
+
+                End If
+
+            End If
+        Next
+    End Sub
+
+    Private Sub DList_DragEnter(sender As Object, e As DragEventArgs) Handles DList.DragEnter
+        If e.Data.GetDataPresent(DataFormats.FileDrop) Then
+            e.Effect = DragDropEffects.Copy
+        End If
     End Sub
 End Class

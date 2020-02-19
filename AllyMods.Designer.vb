@@ -41,6 +41,7 @@ Partial Class AllyMods
         Me.Fade = New System.Windows.Forms.Timer(Me.components)
         Me.btnEnable = New Bunifu.UI.WinForms.BunifuButton.BunifuButton()
         Me.btnDisable = New Bunifu.UI.WinForms.BunifuButton.BunifuButton()
+        Me.Errorlbl = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'EList
@@ -233,11 +234,20 @@ Partial Class AllyMods
         Me.btnDisable.TextMarginLeft = 0
         Me.btnDisable.UseDefaultRadiusAndThickness = True
         '
+        'Errorlbl
+        '
+        Me.Errorlbl.Location = New System.Drawing.Point(15, 405)
+        Me.Errorlbl.Name = "Errorlbl"
+        Me.Errorlbl.Size = New System.Drawing.Size(133, 36)
+        Me.Errorlbl.TabIndex = 5
+        Me.Errorlbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'AllyMods
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Errorlbl)
         Me.Controls.Add(Me.btnRefresh)
         Me.Controls.Add(Me.btnEnable)
         Me.Controls.Add(Me.btnDisable)
@@ -261,4 +271,5 @@ Partial Class AllyMods
     Friend WithEvents btnRefresh As Button
     Friend WithEvents FadeManager As Bunifu.Framework.UI.BunifuFormFadeTransition
     Friend WithEvents Fade As Timer
+    Friend WithEvents Errorlbl As Label
 End Class

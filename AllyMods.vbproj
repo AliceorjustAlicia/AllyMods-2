@@ -48,80 +48,80 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bunifu.Core, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Alice\Bunifu UI WinForms 1.11.5.1\Bunifu.Core.dll</HintPath>
+    <Reference Include="Bunifu.Core">
+      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.Core.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForm.BunifuShadowPanel">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Alice\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForm.BunifuShadowPanel.dll</HintPath>
+      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForm.BunifuShadowPanel.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuButton">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Alice\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuCheckBox">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Alice\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
+      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuCircleProgress">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Alice\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuCircleProgress.dll</HintPath>
+      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuCircleProgress.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuColorTransition">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Alice\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuColorTransition.dll</HintPath>
+      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuColorTransition.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Alice\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
+      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Alice\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuDropdown">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Alice\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
+      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuFormDock">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Alice\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuFormDock.dll</HintPath>
+      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuFormDock.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuGauge">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Alice\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuGauge.dll</HintPath>
+      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuGauge.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuImageButton">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Alice\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
+      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuLabel">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Alice\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
+      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuPages">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Alice\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuPages.dll</HintPath>
+      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuPages.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Alice\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
+      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuProgressBar">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Alice\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuProgressBar.dll</HintPath>
+      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuProgressBar.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuRadioButton">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Alice\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
+      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuScrollBar">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Alice\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
+      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuSlider">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Alice\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
+      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuTextbox">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Alice\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
+      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuToolTip">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Alice\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuToolTip.dll</HintPath>
+      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuToolTip.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuTransition">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Alice\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuTransition.dll</HintPath>
+      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuTransition.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuUserControl">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Alice\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuUserControl.dll</HintPath>
+      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuUserControl.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.ToggleSwitch">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Alice\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.ToggleSwitch.dll</HintPath>
+      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.ToggleSwitch.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu_UI_v1.5.3">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Alice\Bunifu UI WinForms 1.11.5.1\Bunifu_UI_v1.5.3.dll</HintPath>
+      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
