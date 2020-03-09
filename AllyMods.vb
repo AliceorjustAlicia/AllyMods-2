@@ -374,4 +374,12 @@ Public Class AllyMods
             selecteditem.Selected = 0
         Next
     End Sub
+
+    Private Sub btnMinimize_Click(sender As Object, e As EventArgs) Handles btnMinimize.Click
+        WindowState = FormWindowState.Minimized
+    End Sub
+
+    Private Sub btnSettings_Click(sender As Object, e As EventArgs) Handles btnSettings.Click
+        MsgBox("Coming soon!", MsgBoxStyle.Information)
+    End Sub
 End Class
