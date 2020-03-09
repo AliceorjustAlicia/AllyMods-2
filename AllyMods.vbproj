@@ -48,80 +48,8 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bunifu.Core">
-      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForm.BunifuShadowPanel">
-      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForm.BunifuShadowPanel.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuButton">
-      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuCheckBox">
-      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuCircleProgress">
-      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuCircleProgress.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuColorTransition">
-      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuColorTransition.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
-      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
-      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuDropdown">
-      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuFormDock">
-      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuFormDock.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuGauge">
-      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuGauge.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuImageButton">
-      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuLabel">
-      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuPages">
-      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuPages.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox">
-      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuProgressBar">
-      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuProgressBar.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuRadioButton">
-      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuScrollBar">
-      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuSlider">
-      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuTextbox">
-      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuToolTip">
-      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuToolTip.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuTransition">
-      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuTransition.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuUserControl">
-      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.BunifuUserControl.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.ToggleSwitch">
-      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu.UI.WinForms.ToggleSwitch.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu_UI_v1.5.3">
-      <HintPath>E:\Programs\Bunifu UI WinForms 1.11.5.1 (1)\Bunifu_UI_v1.5.3.dll</HintPath>
+    <Reference Include="MetroSet UI, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\MetroSet_UI.1.0.5\lib\net45\MetroSet UI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -157,12 +85,6 @@
     <Compile Include="AllyMods.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Loader.Designer.vb">
-      <DependentUpon>Loader.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Loader.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -183,14 +105,11 @@
     <EmbeddedResource Include="AllyMods.resx">
       <DependentUpon>AllyMods.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Loader.resx">
-      <DependentUpon>Loader.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -206,14 +125,20 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Pluto Sans W04 Bold.ttf" />
+    <None Include="packages.config" />
     <None Include="Resources\wallpaper_loader.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\allymods.png" />
+    <None Include="Resources\loading.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\loading.gif" />
+    <None Include="Resources\close-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -1,9 +1,10 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class AllyMods
-    Inherits System.Windows.Forms.Form
+    Inherits MetroSet_UI.Forms.MetroSetForm
+
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,16 +21,8 @@ Partial Class AllyMods
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AllyMods))
-        Dim BorderEdges1 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges()
-        Dim StateProperties1 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties()
-        Dim StateProperties2 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties()
-        Dim BorderEdges2 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges()
-        Dim StateProperties3 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties()
-        Dim StateProperties4 As Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties = New Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties()
         Me.EList = New System.Windows.Forms.ListView()
         Me.ColName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColType = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -37,11 +30,17 @@ Partial Class AllyMods
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btnRefresh = New System.Windows.Forms.Button()
-        Me.FadeManager = New Bunifu.Framework.UI.BunifuFormFadeTransition(Me.components)
-        Me.Fade = New System.Windows.Forms.Timer(Me.components)
-        Me.btnEnable = New Bunifu.UI.WinForms.BunifuButton.BunifuButton()
-        Me.btnDisable = New Bunifu.UI.WinForms.BunifuButton.BunifuButton()
-        Me.Errorlbl = New System.Windows.Forms.Label()
+        Me.lblError = New System.Windows.Forms.Label()
+        Me.btnDelete = New System.Windows.Forms.Button()
+        Me.btnSettings = New System.Windows.Forms.PictureBox()
+        Me.btnEnable = New MetroSet_UI.Controls.MetroSetButton()
+        Me.StyleManager = New MetroSet_UI.StyleManager()
+        Me.btnDisable = New MetroSet_UI.Controls.MetroSetButton()
+        Me.btnClose = New System.Windows.Forms.PictureBox()
+        Me.btnMinimize = New System.Windows.Forms.PictureBox()
+        CType(Me.btnSettings, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnClose, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnMinimize, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'EList
@@ -49,10 +48,11 @@ Partial Class AllyMods
         Me.EList.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColName, Me.ColType})
         Me.EList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.EList.HideSelection = False
-        Me.EList.Location = New System.Drawing.Point(170, 0)
+        Me.EList.Location = New System.Drawing.Point(159, 7)
         Me.EList.Name = "EList"
-        Me.EList.Size = New System.Drawing.Size(634, 256)
+        Me.EList.Size = New System.Drawing.Size(634, 213)
         Me.EList.TabIndex = 0
+        Me.EList.TabStop = False
         Me.EList.UseCompatibleStateImageBehavior = False
         Me.EList.View = System.Windows.Forms.View.Details
         '
@@ -72,10 +72,11 @@ Partial Class AllyMods
         Me.DList.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2})
         Me.DList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.DList.HideSelection = False
-        Me.DList.Location = New System.Drawing.Point(170, 262)
+        Me.DList.Location = New System.Drawing.Point(159, 229)
         Me.DList.Name = "DList"
-        Me.DList.Size = New System.Drawing.Size(634, 176)
+        Me.DList.Size = New System.Drawing.Size(634, 213)
         Me.DList.TabIndex = 1
+        Me.DList.TabStop = False
         Me.DList.UseCompatibleStateImageBehavior = False
         Me.DList.View = System.Windows.Forms.View.Details
         '
@@ -92,170 +93,172 @@ Partial Class AllyMods
         '
         'btnRefresh
         '
-        Me.btnRefresh.Location = New System.Drawing.Point(49, 282)
+        Me.btnRefresh.BackColor = System.Drawing.Color.MediumPurple
+        Me.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.btnRefresh.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRefresh.ForeColor = System.Drawing.SystemColors.Menu
+        Me.btnRefresh.Location = New System.Drawing.Point(32, 220)
         Me.btnRefresh.Name = "btnRefresh"
-        Me.btnRefresh.Size = New System.Drawing.Size(75, 23)
+        Me.btnRefresh.Size = New System.Drawing.Size(99, 31)
         Me.btnRefresh.TabIndex = 4
+        Me.btnRefresh.TabStop = False
         Me.btnRefresh.Text = "Refresh"
-        Me.btnRefresh.UseVisualStyleBackColor = True
+        Me.btnRefresh.UseVisualStyleBackColor = False
         '
-        'FadeManager
+        'lblError
         '
-        Me.FadeManager.Delay = 1
+        Me.lblError.BackColor = System.Drawing.Color.Transparent
+        Me.lblError.Location = New System.Drawing.Point(15, 363)
+        Me.lblError.Name = "lblError"
+        Me.lblError.Size = New System.Drawing.Size(133, 36)
+        Me.lblError.TabIndex = 5
+        Me.lblError.Text = "ERROR"
+        Me.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblError.Visible = False
         '
-        'Fade
+        'btnDelete
         '
-        Me.Fade.Enabled = True
-        Me.Fade.Interval = 2000
+        Me.btnDelete.BackColor = System.Drawing.Color.MediumPurple
+        Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.btnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDelete.ForeColor = System.Drawing.SystemColors.Menu
+        Me.btnDelete.Location = New System.Drawing.Point(32, 258)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(99, 31)
+        Me.btnDelete.TabIndex = 6
+        Me.btnDelete.TabStop = False
+        Me.btnDelete.Text = "Delete"
+        Me.btnDelete.UseVisualStyleBackColor = False
+        '
+        'btnSettings
+        '
+        Me.btnSettings.BackColor = System.Drawing.Color.Transparent
+        Me.btnSettings.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSettings.Image = Global.AllyMods2.My.Resources.Resources.settings_icon
+        Me.btnSettings.Location = New System.Drawing.Point(103, 391)
+        Me.btnSettings.Name = "btnSettings"
+        Me.btnSettings.Size = New System.Drawing.Size(47, 51)
+        Me.btnSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnSettings.TabIndex = 7
+        Me.btnSettings.TabStop = False
         '
         'btnEnable
         '
-        Me.btnEnable.AllowToggling = False
-        Me.btnEnable.AnimationSpeed = 200
-        Me.btnEnable.AutoGenerateColors = False
-        Me.btnEnable.BackColor = System.Drawing.Color.Transparent
-        Me.btnEnable.BackColor1 = System.Drawing.Color.DodgerBlue
-        Me.btnEnable.BackgroundImage = CType(resources.GetObject("btnEnable.BackgroundImage"), System.Drawing.Image)
-        Me.btnEnable.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid
-        Me.btnEnable.ButtonText = "Enable"
-        Me.btnEnable.ButtonTextMarginLeft = 0
-        Me.btnEnable.ColorContrastOnClick = 45
-        Me.btnEnable.ColorContrastOnHover = 45
-        Me.btnEnable.Cursor = System.Windows.Forms.Cursors.Hand
-        BorderEdges1.BottomLeft = True
-        BorderEdges1.BottomRight = True
-        BorderEdges1.TopLeft = True
-        BorderEdges1.TopRight = True
-        Me.btnEnable.CustomizableEdges = BorderEdges1
-        Me.btnEnable.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.btnEnable.DisabledBorderColor = System.Drawing.Color.Empty
-        Me.btnEnable.DisabledFillColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.btnEnable.DisabledForecolor = System.Drawing.Color.FromArgb(CType(CType(168, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(168, Byte), Integer))
-        Me.btnEnable.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed
-        Me.btnEnable.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!)
-        Me.btnEnable.ForeColor = System.Drawing.Color.White
-        Me.btnEnable.IconLeftCursor = System.Windows.Forms.Cursors.Hand
-        Me.btnEnable.IconMarginLeft = 11
-        Me.btnEnable.IconPadding = 10
-        Me.btnEnable.IconRightCursor = System.Windows.Forms.Cursors.Hand
-        Me.btnEnable.IdleBorderColor = System.Drawing.Color.DodgerBlue
-        Me.btnEnable.IdleBorderRadius = 3
-        Me.btnEnable.IdleBorderThickness = 1
-        Me.btnEnable.IdleFillColor = System.Drawing.Color.DodgerBlue
-        Me.btnEnable.IdleIconLeftImage = Nothing
-        Me.btnEnable.IdleIconRightImage = Nothing
-        Me.btnEnable.IndicateFocus = False
-        Me.btnEnable.Location = New System.Drawing.Point(24, 146)
+        Me.btnEnable.DisabledBackColor = System.Drawing.Color.Gray
+        Me.btnEnable.DisabledBorderColor = System.Drawing.Color.Gray
+        Me.btnEnable.DisabledForeColor = System.Drawing.SystemColors.Menu
+        Me.btnEnable.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.btnEnable.HoverBorderColor = System.Drawing.Color.MediumSlateBlue
+        Me.btnEnable.HoverColor = System.Drawing.Color.MediumSlateBlue
+        Me.btnEnable.HoverTextColor = System.Drawing.Color.White
+        Me.btnEnable.Location = New System.Drawing.Point(23, 101)
         Me.btnEnable.Name = "btnEnable"
-        StateProperties1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(255, Byte), Integer))
-        StateProperties1.BorderRadius = 3
-        StateProperties1.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid
-        StateProperties1.BorderThickness = 1
-        StateProperties1.FillColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(255, Byte), Integer))
-        StateProperties1.ForeColor = System.Drawing.Color.White
-        StateProperties1.IconLeftImage = Nothing
-        StateProperties1.IconRightImage = Nothing
-        Me.btnEnable.onHoverState = StateProperties1
-        StateProperties2.BorderColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(96, Byte), Integer), CType(CType(144, Byte), Integer))
-        StateProperties2.BorderRadius = 3
-        StateProperties2.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid
-        StateProperties2.BorderThickness = 1
-        StateProperties2.FillColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(96, Byte), Integer), CType(CType(144, Byte), Integer))
-        StateProperties2.ForeColor = System.Drawing.Color.White
-        StateProperties2.IconLeftImage = Nothing
-        StateProperties2.IconRightImage = Nothing
-        Me.btnEnable.OnPressedState = StateProperties2
-        Me.btnEnable.Size = New System.Drawing.Size(121, 62)
-        Me.btnEnable.TabIndex = 3
-        Me.btnEnable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btnEnable.TextMarginLeft = 0
-        Me.btnEnable.UseDefaultRadiusAndThickness = True
+        Me.btnEnable.NormalBorderColor = System.Drawing.Color.MediumPurple
+        Me.btnEnable.NormalColor = System.Drawing.Color.MediumPurple
+        Me.btnEnable.NormalTextColor = System.Drawing.Color.White
+        Me.btnEnable.PressBorderColor = System.Drawing.Color.SlateBlue
+        Me.btnEnable.PressColor = System.Drawing.Color.SlateBlue
+        Me.btnEnable.PressTextColor = System.Drawing.Color.White
+        Me.btnEnable.Size = New System.Drawing.Size(116, 39)
+        Me.btnEnable.Style = MetroSet_UI.Design.Style.Custom
+        Me.btnEnable.StyleManager = Me.StyleManager
+        Me.btnEnable.TabIndex = 8
+        Me.btnEnable.TabStop = False
+        Me.btnEnable.Text = "Enable"
+        Me.btnEnable.ThemeAuthor = "Narwin"
+        Me.btnEnable.ThemeName = "MetroDark"
+        '
+        'StyleManager
+        '
+        Me.StyleManager.CustomTheme = "C:\Users\Alice\AppData\Roaming\Microsoft\Windows\Templates\ThemeFile.xml"
+        Me.StyleManager.MetroForm = Me
+        Me.StyleManager.Style = MetroSet_UI.Design.Style.Custom
+        Me.StyleManager.ThemeAuthor = "Alice"
+        Me.StyleManager.ThemeName = "MetroDark"
         '
         'btnDisable
         '
-        Me.btnDisable.AllowToggling = False
-        Me.btnDisable.AnimationSpeed = 200
-        Me.btnDisable.AutoGenerateColors = False
-        Me.btnDisable.BackColor = System.Drawing.Color.Transparent
-        Me.btnDisable.BackColor1 = System.Drawing.Color.DodgerBlue
-        Me.btnDisable.BackgroundImage = CType(resources.GetObject("btnDisable.BackgroundImage"), System.Drawing.Image)
-        Me.btnDisable.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid
-        Me.btnDisable.ButtonText = "Disable"
-        Me.btnDisable.ButtonTextMarginLeft = 0
-        Me.btnDisable.ColorContrastOnClick = 45
-        Me.btnDisable.ColorContrastOnHover = 45
-        Me.btnDisable.Cursor = System.Windows.Forms.Cursors.Hand
-        BorderEdges2.BottomLeft = True
-        BorderEdges2.BottomRight = True
-        BorderEdges2.TopLeft = True
-        BorderEdges2.TopRight = True
-        Me.btnDisable.CustomizableEdges = BorderEdges2
-        Me.btnDisable.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.btnDisable.DisabledBorderColor = System.Drawing.Color.Empty
-        Me.btnDisable.DisabledFillColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.btnDisable.DisabledForecolor = System.Drawing.Color.FromArgb(CType(CType(168, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(168, Byte), Integer))
-        Me.btnDisable.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed
-        Me.btnDisable.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!)
-        Me.btnDisable.ForeColor = System.Drawing.Color.White
-        Me.btnDisable.IconLeftCursor = System.Windows.Forms.Cursors.Hand
-        Me.btnDisable.IconMarginLeft = 11
-        Me.btnDisable.IconPadding = 10
-        Me.btnDisable.IconRightCursor = System.Windows.Forms.Cursors.Hand
-        Me.btnDisable.IdleBorderColor = System.Drawing.Color.DodgerBlue
-        Me.btnDisable.IdleBorderRadius = 3
-        Me.btnDisable.IdleBorderThickness = 1
-        Me.btnDisable.IdleFillColor = System.Drawing.Color.DodgerBlue
-        Me.btnDisable.IdleIconLeftImage = Nothing
-        Me.btnDisable.IdleIconRightImage = Nothing
-        Me.btnDisable.IndicateFocus = False
-        Me.btnDisable.Location = New System.Drawing.Point(24, 214)
+        Me.btnDisable.DisabledBackColor = System.Drawing.Color.Gray
+        Me.btnDisable.DisabledBorderColor = System.Drawing.Color.Gray
+        Me.btnDisable.DisabledForeColor = System.Drawing.SystemColors.Menu
+        Me.btnDisable.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.btnDisable.HoverBorderColor = System.Drawing.Color.MediumSlateBlue
+        Me.btnDisable.HoverColor = System.Drawing.Color.MediumSlateBlue
+        Me.btnDisable.HoverTextColor = System.Drawing.Color.White
+        Me.btnDisable.Location = New System.Drawing.Point(23, 158)
         Me.btnDisable.Name = "btnDisable"
-        StateProperties3.BorderColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(255, Byte), Integer))
-        StateProperties3.BorderRadius = 3
-        StateProperties3.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid
-        StateProperties3.BorderThickness = 1
-        StateProperties3.FillColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(255, Byte), Integer))
-        StateProperties3.ForeColor = System.Drawing.Color.White
-        StateProperties3.IconLeftImage = Nothing
-        StateProperties3.IconRightImage = Nothing
-        Me.btnDisable.onHoverState = StateProperties3
-        StateProperties4.BorderColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(96, Byte), Integer), CType(CType(144, Byte), Integer))
-        StateProperties4.BorderRadius = 3
-        StateProperties4.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid
-        StateProperties4.BorderThickness = 1
-        StateProperties4.FillColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(96, Byte), Integer), CType(CType(144, Byte), Integer))
-        StateProperties4.ForeColor = System.Drawing.Color.White
-        StateProperties4.IconLeftImage = Nothing
-        StateProperties4.IconRightImage = Nothing
-        Me.btnDisable.OnPressedState = StateProperties4
-        Me.btnDisable.Size = New System.Drawing.Size(121, 62)
-        Me.btnDisable.TabIndex = 2
-        Me.btnDisable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btnDisable.TextMarginLeft = 0
-        Me.btnDisable.UseDefaultRadiusAndThickness = True
+        Me.btnDisable.NormalBorderColor = System.Drawing.Color.MediumPurple
+        Me.btnDisable.NormalColor = System.Drawing.Color.MediumPurple
+        Me.btnDisable.NormalTextColor = System.Drawing.Color.White
+        Me.btnDisable.PressBorderColor = System.Drawing.Color.SlateBlue
+        Me.btnDisable.PressColor = System.Drawing.Color.SlateBlue
+        Me.btnDisable.PressTextColor = System.Drawing.Color.White
+        Me.btnDisable.Size = New System.Drawing.Size(116, 39)
+        Me.btnDisable.Style = MetroSet_UI.Design.Style.Custom
+        Me.btnDisable.StyleManager = Me.StyleManager
+        Me.btnDisable.TabIndex = 9
+        Me.btnDisable.TabStop = False
+        Me.btnDisable.Text = "Disable"
+        Me.btnDisable.ThemeAuthor = "Narwin"
+        Me.btnDisable.ThemeName = "MetroDark"
         '
-        'Errorlbl
+        'btnClose
         '
-        Me.Errorlbl.Location = New System.Drawing.Point(15, 405)
-        Me.Errorlbl.Name = "Errorlbl"
-        Me.Errorlbl.Size = New System.Drawing.Size(133, 36)
-        Me.Errorlbl.TabIndex = 5
-        Me.Errorlbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btnClose.BackColor = System.Drawing.Color.Transparent
+        Me.btnClose.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnClose.Image = Global.AllyMods2.My.Resources.Resources.close_icon
+        Me.btnClose.Location = New System.Drawing.Point(9, 391)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(47, 51)
+        Me.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnClose.TabIndex = 10
+        Me.btnClose.TabStop = False
+        '
+        'btnMinimize
+        '
+        Me.btnMinimize.BackColor = System.Drawing.Color.Transparent
+        Me.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnMinimize.Image = Global.AllyMods2.My.Resources.Resources.minimize_icon
+        Me.btnMinimize.Location = New System.Drawing.Point(56, 391)
+        Me.btnMinimize.Name = "btnMinimize"
+        Me.btnMinimize.Size = New System.Drawing.Size(47, 51)
+        Me.btnMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnMinimize.TabIndex = 11
+        Me.btnMinimize.TabStop = False
         '
         'AllyMods
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.BorderColor = System.Drawing.Color.MediumPurple
+        Me.BorderThickness = 3.0!
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.Errorlbl)
-        Me.Controls.Add(Me.btnRefresh)
-        Me.Controls.Add(Me.btnEnable)
+        Me.Controls.Add(Me.btnMinimize)
+        Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.btnDisable)
+        Me.Controls.Add(Me.btnEnable)
+        Me.Controls.Add(Me.btnSettings)
+        Me.Controls.Add(Me.btnDelete)
+        Me.Controls.Add(Me.lblError)
+        Me.Controls.Add(Me.btnRefresh)
         Me.Controls.Add(Me.DList)
         Me.Controls.Add(Me.EList)
+        Me.HeaderColor = System.Drawing.Color.MediumPurple
         Me.Name = "AllyMods"
+        Me.Padding = New System.Windows.Forms.Padding(12, 90, 12, 12)
+        Me.ShowTitle = False
+        Me.SmallLineColor1 = System.Drawing.Color.MediumPurple
+        Me.SmallLineColor2 = System.Drawing.Color.MediumPurple
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "AllyMods"
+        Me.Style = MetroSet_UI.Design.Style.Custom
+        Me.StyleManager = Me.StyleManager
+        Me.Text = "ALLYMODS"
+        Me.TextColor = System.Drawing.Color.White
+        Me.ThemeName = "MetroDark"
+        CType(Me.btnSettings, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnClose, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnMinimize, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -266,10 +269,13 @@ Partial Class AllyMods
     Friend WithEvents DList As ListView
     Friend WithEvents ColumnHeader1 As ColumnHeader
     Friend WithEvents ColumnHeader2 As ColumnHeader
-    Friend WithEvents btnDisable As Bunifu.UI.WinForms.BunifuButton.BunifuButton
-    Friend WithEvents btnEnable As Bunifu.UI.WinForms.BunifuButton.BunifuButton
     Friend WithEvents btnRefresh As Button
-    Friend WithEvents FadeManager As Bunifu.Framework.UI.BunifuFormFadeTransition
-    Friend WithEvents Fade As Timer
-    Friend WithEvents Errorlbl As Label
+    Friend WithEvents lblError As Label
+    Friend WithEvents btnDelete As Button
+    Friend WithEvents btnSettings As PictureBox
+    Friend WithEvents btnEnable As MetroSet_UI.Controls.MetroSetButton
+    Friend WithEvents StyleManager As MetroSet_UI.StyleManager
+    Friend WithEvents btnDisable As MetroSet_UI.Controls.MetroSetButton
+    Friend WithEvents btnMinimize As PictureBox
+    Friend WithEvents btnClose As PictureBox
 End Class

@@ -60,11 +60,6 @@ Public Class AllyMods
         Return 0
     End Function
     Private Sub AllyMods_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        '--------- Allows the fade transition to be produced smoothly and with no problems by re-appearing the form without opacity (BunifuUI problem)
-        Me.Visible = False
-        Me.Opacity = 0
-        Me.Visible = True
-        '---------
 
         '--------- Enable drag-and-drop features
         EList.AllowDrop = True
@@ -75,9 +70,9 @@ Public Class AllyMods
 
         If CoreCheckBool = True Then
             RefreshList()
-            Errorlbl.Enabled = False
-        Else 'Disable functionality if Corecheck is not passed
-            Errorlbl.Text = "ERROR"
+            lblError.Visible = False
+        Else 'Disable functionality if Corecheck() is not passed
+            lblError.Visible = True
             btnEnable.Enabled = False
             btnDisable.Enabled = False
             btnRefresh.Enabled = False
@@ -89,8 +84,7 @@ Public Class AllyMods
 
     End Sub
 
-    Private Sub btnEnable_Click(sender As Object, e As EventArgs) Handles btnEnable.Click
-
+    Private Sub btnEnable_Click(sender As Object, e As EventArgs)
         If DList.SelectedItems.Count <= 0 Then
             MsgBox("Select an item first")  ' Makes sure the user selects at least one item from the list before triggering an event of file/directory movement
             Return
@@ -152,7 +146,7 @@ Public Class AllyMods
 
     End Sub
 
-    Private Sub btnDisable_Click(sender As Object, e As EventArgs) Handles btnDisable.Click
+    Private Sub btnDisable_Click(sender As Object, e As EventArgs)
         If EList.SelectedItems.Count <= 0 Then
             MsgBox("Select an item first")  ' Makes sure the user selects at least one item from the list before triggering an event of file/directory movement
             Return
@@ -196,11 +190,11 @@ Public Class AllyMods
                     If result = DialogResult.Yes Then
 
                         File.Replace(ActiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower, InactiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower, False)
-                            RefreshList()
-                        Else
-                            Return
+                        RefreshList()
+                    Else
+                        Return
 
-                        End If
+                    End If
 
                     RefreshList()
                     Return
@@ -213,12 +207,8 @@ Public Class AllyMods
         RefreshList()
     End Sub
 
-    Private Sub Fade_Tick(sender As Object, e As EventArgs) Handles Fade.Tick
-        FadeManager.ShowAsyc(Me)
-        Fade.Enabled = False
-    End Sub
 
-    Private Sub Label1_MouseClick(sender As Object, e As MouseEventArgs) Handles Errorlbl.MouseClick
+    Private Sub Label1_MouseClick(sender As Object, e As MouseEventArgs) Handles lblError.MouseClick
         MsgBox("Some of the required files do not exist, AllyMods 2 will probably fail to run various functions. Proceed at your own risk or verify the integrity of your game's files before re-running this software.", MsgBoxStyle.Critical)
     End Sub
 
@@ -284,5 +274,104 @@ Public Class AllyMods
         If e.Data.GetDataPresent(DataFormats.FileDrop) Then
             e.Effect = DragDropEffects.Copy
         End If
+    End Sub
+
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+
+        If DList.SelectedItems.Count = 0 And EList.SelectedItems.Count = 0 Then
+            MsgBox("Select an item first")  ' Makes sure the user selects at least one item from the list before triggering an event of file/directory removal
+            Return
+        End If
+
+        For Each selectedItem As ListViewItem In DList.SelectedItems
+
+            If selectedItem.Selected Then
+
+                Try
+
+                    If File.Exists(InactiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower) Then
+                        File.Delete(InactiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower)
+                        RefreshList()
+                    ElseIf Directory.Exists(InactiveMods + selectedItem.Text) Then
+
+                    Else
+
+                        MsgBox(InactiveMods + selectedItem.Text + " is no longer present, did you move it manually?")
+                        RefreshList()
+                        Return
+                    End If
+
+                    If Directory.Exists(InactiveMods + selectedItem.Text) Then
+                        Directory.Delete(InactiveMods + selectedItem.Text)
+                        RefreshList()
+                    ElseIf Not File.Exists(InactiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower) Then
+
+                    Else
+                        MsgBox(InactiveMods + selectedItem.Text + " is no longer present, did you move it manually?")
+                        RefreshList()
+                        Return
+                    End If
+
+                Catch ex As Exception
+                    MsgBox(ex)
+
+
+                    RefreshList()
+                    Return
+                End Try
+            End If
+        Next
+
+        For Each selectedItem As ListViewItem In EList.SelectedItems
+
+            If selectedItem.Selected Then
+
+                Try
+
+                    If File.Exists(ActiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower) Then
+                        File.Delete(ActiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower)
+                        RefreshList()
+                    ElseIf Directory.Exists(ActiveMods + selectedItem.Text) Then
+
+                    Else
+
+                        MsgBox(ActiveMods + selectedItem.Text + " is no longer present, did you move it manually?")
+                        RefreshList()
+                        Return
+                    End If
+
+                    If Directory.Exists(ActiveMods + selectedItem.Text) Then
+                        Directory.Delete(ActiveMods + selectedItem.Text)
+                        RefreshList()
+                    ElseIf Not File.Exists(ActiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower) Then
+
+                    Else
+                        MsgBox(ActiveMods + selectedItem.Text + " is no longer present, did you move it manually?")
+                        RefreshList()
+                        Return
+                    End If
+
+                Catch ex As Exception
+                    MsgBox(ex)
+
+
+                    RefreshList()
+                    Return
+                End Try
+            End If
+        Next
+    End Sub
+
+    ' Makes sure to deselect any items that are selected on the contrary form when the enter focus event is activated on one of them (Avoiding confusion of simultaneous selection)
+    Private Sub EList_Enter(sender As Object, e As EventArgs) Handles EList.Enter
+        For Each selecteditem As ListViewItem In DList.SelectedItems
+            selecteditem.Selected = 0
+        Next
+    End Sub
+
+    Private Sub DList_Enter(sender As Object, e As EventArgs) Handles DList.Enter
+        For Each selecteditem As ListViewItem In EList.SelectedItems
+            selecteditem.Selected = 0
+        Next
     End Sub
 End Class

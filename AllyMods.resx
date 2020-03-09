@@ -117,35 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="FadeManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="StyleManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="Fade.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>218, 17</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnEnable.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAHkAAAA+CAYAAAAPp7SdAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFCSURBVHhe7d2xTcRAGAXhbcR3lEIFtGYjyiAmpRQaIKKB
-        NWc0oRvwML80yeplXwE7un9y93V/um/z/bbte0l6nR+HK8Rj3Nb5eTqsS7es8wviB/LJoBxBHLI5iEM2
-        B3HI5iAO2RzEIZuDOGRzEIdsDuKQzUEcsjmIQzYHccjmIA7ZHMQhm4M4ZHMQh2wO4pDNQRyyOYhDNgdx
-        yOYgDtkcxCGbgzhkcxCHbA7ikM1BHLI5iEM2B3HI5iAO2RzEIZuDOGRzEIdsDuKQzUEcsjmIQzYHccjm
-        IA7ZHMQhm4M4ZHMQh2wO4pDNQRyyOYhDNgdxyOYgDtkcxCGbgzhkcxCHbA7ikM1BHLI5iEM2B3HI5iAO
-        2RzEIZuDOGRzEIdsDuIxjk+izgZ17ZZt/kD8943f8+Ph+2xY1+wAXt7mC8Sd+8b4BbbphPsclidSAAAA
-        AElFTkSuQmCC
-</value>
-  </data>
-  <data name="btnDisable.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAHkAAAA+CAYAAAAPp7SdAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFCSURBVHhe7d2xTcRAGAXhbcR3lEIFtGYjyiAmpRQaIKKB
-        NWc0oRvwML80yeplXwE7un9y93V/um/z/bbte0l6nR+HK8Rj3Nb5eTqsS7es8wviB/LJoBxBHLI5iEM2
-        B3HI5iAO2RzEIZuDOGRzEIdsDuKQzUEcsjmIQzYHccjmIA7ZHMQhm4M4ZHMQh2wO4pDNQRyyOYhDNgdx
-        yOYgDtkcxCGbgzhkcxCHbA7ikM1BHLI5iEM2B3HI5iAO2RzEIZuDOGRzEIdsDuKQzUEcsjmIQzYHccjm
-        IA7ZHMQhm4M4ZHMQh2wO4pDNQRyyOYhDNgdxyOYgDtkcxCGbgzhkcxCHbA7ikM1BHLI5iEM2B3HI5iAO
-        2RzEIZuDOGRzEIdsDuIxjk+izgZ17ZZt/kD8943f8+Ph+2xY1+wAXt7mC8Sd+8b4BbbphPsclidSAAAA
-        AElFTkSuQmCC
-</value>
-  </data>
 </root>
