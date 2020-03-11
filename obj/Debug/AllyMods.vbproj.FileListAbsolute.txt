@@ -97,5 +97,5 @@ C:\Users\Alice\Source\Repos\AllyMods-2\obj\Debug\AllyMods.vbproj.CopyComplete
 C:\Users\Alice\Source\Repos\AllyMods-2\obj\Debug\AllyMods2.exe
 C:\Users\Alice\Source\Repos\AllyMods-2\obj\Debug\AllyMods2.xml
 C:\Users\Alice\Source\Repos\AllyMods-2\obj\Debug\AllyMods2.pdb
-C:\Users\Alice\Source\Repos\AllyMods-2\bin\Debug\MetroFramework.dll
 C:\Users\Alice\Source\Repos\AllyMods-2\bin\Debug\MetroSet UI.dll
+C:\Users\Alice\Source\Repos\AllyMods-2\obj\Debug\AllyMods.vbprojAssemblyReference.cache

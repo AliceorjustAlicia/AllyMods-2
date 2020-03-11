@@ -84,9 +84,9 @@ Public Class AllyMods
 
     End Sub
 
-    Private Sub btnEnable_Click(sender As Object, e As EventArgs)
+    Private Sub btnEnable_Click(sender As Object, e As EventArgs) Handles btnEnable.Click
         If DList.SelectedItems.Count <= 0 Then
-            MsgBox("Select an item first")  ' Makes sure the user selects at least one item from the list before triggering an event of file/directory movement
+            MsgBox("You must first select an item!", MsgBoxStyle.Information)  ' Makes sure the user selects at least one item from the list before triggering an event of file/directory movement
             Return
         End If
 
@@ -146,9 +146,9 @@ Public Class AllyMods
 
     End Sub
 
-    Private Sub btnDisable_Click(sender As Object, e As EventArgs)
+    Private Sub btnDisable_Click(sender As Object, e As EventArgs) Handles btnDisable.Click
         If EList.SelectedItems.Count <= 0 Then
-            MsgBox("Select an item first")  ' Makes sure the user selects at least one item from the list before triggering an event of file/directory movement
+            MsgBox("You must first select an item!", MsgBoxStyle.Information)  ' Makes sure the user selects at least one item from the list before triggering an event of file/directory movement
             Return
         End If
 
@@ -209,7 +209,7 @@ Public Class AllyMods
 
 
     Private Sub Label1_MouseClick(sender As Object, e As MouseEventArgs) Handles lblError.MouseClick
-        MsgBox("Some of the required files do not exist, AllyMods 2 will probably fail to run various functions. Proceed at your own risk or verify the integrity of your game's files before re-running this software.", MsgBoxStyle.Critical)
+        MsgBox("Some of the required files do not exist, AllyMods 2 will fail to run various functions. Proceed at your own risk or verify the integrity of your game's files before re-running this software.", MsgBoxStyle.Critical)
     End Sub
 
     Private Sub EList_DragDrop(sender As Object, e As DragEventArgs) Handles EList.DragDrop
@@ -221,7 +221,7 @@ Public Class AllyMods
                     File.Move(path, ActiveMods + System.IO.Path.GetFileName(path))
                     RefreshList()
                 Else
-                    MsgBox("The file " + System.IO.Path.GetFileName(path) + " already exists on the enabled list and cannot be moved over, please rename it.")
+                    MsgBox("The file " + System.IO.Path.GetFileName(path) + " already exists on the enabled list and cannot be moved, please rename it")
 
                 End If
             Else
@@ -229,7 +229,7 @@ Public Class AllyMods
                     Directory.Move(path, ActiveMods + System.IO.Path.GetFileName(path))
                     RefreshList()
                 Else
-                    MsgBox("The directory " + System.IO.Path.GetFileName(path) + " already exists on the enabled list and cannot be moved over, please rename it.")
+                    MsgBox("The directory " + System.IO.Path.GetFileName(path) + " already exists on the enabled list and cannot be moved, please rename it")
                     Return
                 End If
 
@@ -252,7 +252,7 @@ Public Class AllyMods
                     File.Move(path, InactiveMods + System.IO.Path.GetFileName(path))
                     RefreshList()
                 Else
-                    MsgBox("The file " + System.IO.Path.GetFileName(path) + " already exists on the disabled list and cannot be moved over, please rename it.")
+                    MsgBox("The file " + System.IO.Path.GetFileName(path) + " already exists on the disabled list and cannot be moved, please rename it")
 
                 End If
 
@@ -262,7 +262,7 @@ Public Class AllyMods
                     Directory.Move(path, InactiveMods + System.IO.Path.GetFileName(path))
                     RefreshList()
                 Else
-                    MsgBox("The directory " + System.IO.Path.GetFileName(path) + " already exists on the disabled list and cannot be moved over, please rename it.")
+                    MsgBox("The directory " + System.IO.Path.GetFileName(path) + " already exists on the disabled list and cannot be moved, please rename it")
 
                 End If
 
@@ -277,92 +277,102 @@ Public Class AllyMods
     End Sub
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
-
         If DList.SelectedItems.Count = 0 And EList.SelectedItems.Count = 0 Then
-            MsgBox("Select an item first")  ' Makes sure the user selects at least one item from the list before triggering an event of file/directory removal
+            MsgBox("You must first select an item!", MsgBoxStyle.Information)  ' Makes sure the user selects at least one item from the list before triggering an event of file/directory removal
             Return
         End If
 
-        For Each selectedItem As ListViewItem In DList.SelectedItems
+        Dim result As DialogResult = MessageBox.Show(EList.SelectedItems.Count + DList.SelectedItems.Count & " item(s) will be deleted and will not be able to be recovered, would you like to proceed?".ToString(), "AllyMods 2 - Confirmation is required", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
-            If selectedItem.Selected Then
-
-                Try
-
-                    If File.Exists(InactiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower) Then
-                        File.Delete(InactiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower)
-                        RefreshList()
-                    ElseIf Directory.Exists(InactiveMods + selectedItem.Text) Then
-
-                    Else
-
-                        MsgBox(InactiveMods + selectedItem.Text + " is no longer present, did you move it manually?")
-                        RefreshList()
-                        Return
-                    End If
-
-                    If Directory.Exists(InactiveMods + selectedItem.Text) Then
-                        Directory.Delete(InactiveMods + selectedItem.Text)
-                        RefreshList()
-                    ElseIf Not File.Exists(InactiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower) Then
-
-                    Else
-                        MsgBox(InactiveMods + selectedItem.Text + " is no longer present, did you move it manually?")
-                        RefreshList()
-                        Return
-                    End If
-
-                Catch ex As Exception
-                    MsgBox(ex)
+        If result = DialogResult.Yes Then
 
 
-                    RefreshList()
-                    Return
-                End Try
-            End If
-        Next
+            For Each selectedItem As ListViewItem In DList.SelectedItems
 
-        For Each selectedItem As ListViewItem In EList.SelectedItems
+                If selectedItem.Selected Then
 
-            If selectedItem.Selected Then
+                    Try
 
-                Try
+                        If File.Exists(InactiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower) Then
+                            File.Delete(InactiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower)
+                            RefreshList()
+                        ElseIf Directory.Exists(InactiveMods + selectedItem.Text) Then
 
-                    If File.Exists(ActiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower) Then
-                        File.Delete(ActiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower)
-                        RefreshList()
-                    ElseIf Directory.Exists(ActiveMods + selectedItem.Text) Then
+                        Else
 
-                    Else
+                            MsgBox(InactiveMods + selectedItem.Text + " is no longer present, did you move it manually?")
+                            RefreshList()
+                            Return
+                        End If
 
-                        MsgBox(ActiveMods + selectedItem.Text + " is no longer present, did you move it manually?")
+                        If Directory.Exists(InactiveMods + selectedItem.Text) Then
+                            Directory.Delete(InactiveMods + selectedItem.Text)
+                            RefreshList()
+                        ElseIf Not File.Exists(InactiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower) Then
+
+                        Else
+                            MsgBox(InactiveMods + selectedItem.Text + " is no longer present, did you move it manually?")
+                            RefreshList()
+                            Return
+                        End If
+
+                    Catch ex As Exception
+                        MsgBox(ex)
+
+
                         RefreshList()
                         Return
-                    End If
+                    End Try
+                End If
+            Next
 
-                    If Directory.Exists(ActiveMods + selectedItem.Text) Then
-                        Directory.Delete(ActiveMods + selectedItem.Text)
-                        RefreshList()
-                    ElseIf Not File.Exists(ActiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower) Then
+            For Each selectedItem As ListViewItem In EList.SelectedItems
 
-                    Else
-                        MsgBox(ActiveMods + selectedItem.Text + " is no longer present, did you move it manually?")
+                If selectedItem.Selected Then
+
+                    Try
+
+                        If File.Exists(ActiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower) Then
+                            File.Delete(ActiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower)
+                            RefreshList()
+                        ElseIf Directory.Exists(ActiveMods + selectedItem.Text) Then
+
+                        Else
+
+                            MsgBox(ActiveMods + selectedItem.Text + " is no longer present, did you move it manually?")
+                            RefreshList()
+                            Return
+                        End If
+
+                        If Directory.Exists(ActiveMods + selectedItem.Text) Then
+                            Directory.Delete(ActiveMods + selectedItem.Text)
+                            RefreshList()
+                        ElseIf Not File.Exists(ActiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower) Then
+
+                        Else
+                            MsgBox(ActiveMods + selectedItem.Text + " is no longer present, did you move it manually?")
+                            RefreshList()
+                            Return
+                        End If
+
+                    Catch ex As Exception
+                        MsgBox(ex)
+
+
                         RefreshList()
                         Return
-                    End If
+                    End Try
+                End If
+            Next
 
-                Catch ex As Exception
-                    MsgBox(ex)
+        Else
+            Return
+        End If
 
-
-                    RefreshList()
-                    Return
-                End Try
-            End If
-        Next
     End Sub
 
-    ' Makes sure to deselect any items that are selected on the contrary form when the enter focus event is activated on one of them (Avoiding confusion of simultaneous selection)
+    ' Makes sure To deselect any items that are selected On the contrary form When the enter focus Event Is activated On one Of them (Avoiding confusion Of simultaneous selection)
+    ' -------------------------------------------------------------------------------------------
     Private Sub EList_Enter(sender As Object, e As EventArgs) Handles EList.Enter
         For Each selecteditem As ListViewItem In DList.SelectedItems
             selecteditem.Selected = 0
@@ -374,6 +384,7 @@ Public Class AllyMods
             selecteditem.Selected = 0
         Next
     End Sub
+    ' -------------------------------------------------------------------------------------------
 
     Private Sub btnMinimize_Click(sender As Object, e As EventArgs) Handles btnMinimize.Click
         WindowState = FormWindowState.Minimized
@@ -381,5 +392,9 @@ Public Class AllyMods
 
     Private Sub btnSettings_Click(sender As Object, e As EventArgs) Handles btnSettings.Click
         MsgBox("Coming soon!", MsgBoxStyle.Information)
+    End Sub
+
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        Application.Exit()
     End Sub
 End Class
