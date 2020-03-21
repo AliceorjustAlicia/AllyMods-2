@@ -108,7 +108,7 @@ Partial Class AllyMods
         'lblError
         '
         Me.lblError.BackColor = System.Drawing.Color.Transparent
-        Me.lblError.Location = New System.Drawing.Point(15, 363)
+        Me.lblError.Location = New System.Drawing.Point(13, 363)
         Me.lblError.Name = "lblError"
         Me.lblError.Size = New System.Drawing.Size(133, 36)
         Me.lblError.TabIndex = 5
@@ -165,7 +165,7 @@ Partial Class AllyMods
         Me.btnEnable.TabIndex = 8
         Me.btnEnable.TabStop = False
         Me.btnEnable.Text = "Enable"
-        Me.btnEnable.ThemeAuthor = "Narwin"
+        Me.btnEnable.ThemeAuthor = "Alice"
         Me.btnEnable.ThemeName = "MetroDark"
         '
         'StyleManager
@@ -199,7 +199,7 @@ Partial Class AllyMods
         Me.btnDisable.TabIndex = 9
         Me.btnDisable.TabStop = False
         Me.btnDisable.Text = "Disable"
-        Me.btnDisable.ThemeAuthor = "Narwin"
+        Me.btnDisable.ThemeAuthor = "Alice"
         Me.btnDisable.ThemeName = "MetroDark"
         '
         'btnClose
@@ -255,6 +255,7 @@ Partial Class AllyMods
         Me.StyleManager = Me.StyleManager
         Me.Text = "ALLYMODS"
         Me.TextColor = System.Drawing.Color.White
+        Me.ThemeAuthor = "Alice"
         Me.ThemeName = "MetroDark"
         CType(Me.btnSettings, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnClose, System.ComponentModel.ISupportInitialize).EndInit()

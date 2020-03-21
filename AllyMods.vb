@@ -5,7 +5,8 @@ Public Class AllyMods
 
     Dim ActiveMods As String = SpecialDirectories.MyDocuments + "\Electronic Arts\Sims 4\Mods\"
     Dim InactiveMods As String = SpecialDirectories.MyDocuments + "\Electronic Arts\Sims 4\Inactive\"
-    Dim SimsDocuments As String = SpecialDirectories.MyDocuments + "\Electronic Arts\Sims 4\"
+    Dim SimsDocuments As String = SpecialDirectories.MyDocuments + "\Electronic Arts\"
+    Dim AppDocuments As String = SpecialDirectories.MyDocuments + "\AllyMods-2\"
 
     Dim activeinfo As New IO.DirectoryInfo(ActiveMods) ' Already transfer the information of the referenced path to the defined field
     Dim inactiveinfo As New IO.DirectoryInfo(InactiveMods) ' ^
@@ -17,8 +18,6 @@ Public Class AllyMods
             CoreCheckBool = True 'Conclusive     ^
         End If
 
-
-        Return 0
     End Function
 
     Private Function RefreshList()
@@ -57,7 +56,25 @@ Public Class AllyMods
 
         Next
         ' End inactive folder code
-        Return 0
+
+    End Function
+
+    Private Function DeployCrashLog(r)
+
+        If Not Directory.Exists(AppDocuments) Then
+            Directory.CreateDirectory(AppDocuments)
+            Dim crashlog As New IO.StreamWriter(AppDocuments + "crashlogs.txt", True)
+            crashlog.WriteLine("- AllyMods 2 -", HorizontalAlignment.Center)
+            crashlog.WriteLine(vbNewLine + "[" + DateAndTime.DateString + " : " + TimeString + "] " + r)
+            crashlog.Close()
+        Else
+            Dim crashlog As New IO.StreamWriter(AppDocuments + "crashlogs.txt", True)
+            crashlog.WriteLine(vbNewLine + "[" + DateAndTime.DateString + " : " + TimeString + "] " + r)
+            crashlog.Close()
+        End If
+
+
+        Return r
     End Function
     Private Sub AllyMods_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -71,16 +88,20 @@ Public Class AllyMods
         If CoreCheckBool = True Then
             RefreshList()
             lblError.Visible = False
-        Else 'Disable functionality if Corecheck() is not passed
-            lblError.Visible = True
-            btnEnable.Enabled = False
-            btnDisable.Enabled = False
-            btnRefresh.Enabled = False
-            EList.AllowDrop = False
-            DList.AllowDrop = False
-        End If
 
-        ' RefreshList()
+        Else 'Execute crashlog creation and Close()
+            Dim result As DialogResult = MsgBox("Oops, something went wrong! Integrity files have not been found, crash-log has been generated at " + AppDocuments + " would you like to open it?", MsgBoxStyle.YesNo)
+
+            DeployCrashLog("Integrity check has not been passed, error locating " + SimsDocuments + " has the game ran at least once?")
+
+            If result = DialogResult.Yes Then
+                Process.Start(AppDocuments + "crashlogs.txt")
+                Close()
+
+            ElseIf result = DialogResult.No Then
+                Close()
+            End If
+        End If
 
     End Sub
 
@@ -92,15 +113,9 @@ Public Class AllyMods
 
         For Each selectedItem As ListViewItem In DList.SelectedItems
 
-
-
             If selectedItem.Selected Then
 
-                ' MsgBox(ActiveMods + currentItem.Text + "." + currentItem.SubItems.Item(1).Text.ToLower) 'debug
-
-
                 Try
-
                     If File.Exists(InactiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower) Then
                         File.Move(InactiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower, ActiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower)
                         RefreshList()
@@ -108,7 +123,7 @@ Public Class AllyMods
 
                     Else
 
-                        MsgBox(InactiveMods + selectedItem.Text + " is no longer present, did you move it manually?")
+                        MsgBox(InactiveMods + selectedItem.Text + " is no longer present, have you moved it?")
                         RefreshList()
                         Return
                     End If
@@ -119,17 +134,17 @@ Public Class AllyMods
                     ElseIf Not File.Exists(InactiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower) Then
 
                     Else
-                        MsgBox(InactiveMods + selectedItem.Text + " is no longer present, did you move it manually?")
+                        MsgBox(InactiveMods + selectedItem.Text + " is no longer present, have you moved it?")
                         RefreshList()
                         Return
                     End If
 
                 Catch ex As Exception 'Catch the exception and handle it with replacing functionality, if the file already exists
                     If Not File.Exists(InactiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower) And Directory.Exists(InactiveMods + selectedItem.Text) Then
-                        MsgBox(InactiveMods + selectedItem.Text + " is a directory and it already exists, please rename it before attempting to enable.")
+                        MsgBox(InactiveMods + selectedItem.Text + " is a directory And it already exists, please rename it before attempting to enable.")
                         Return
                     End If
-                    Dim result As DialogResult = MessageBox.Show("The file you are trying to use already exists, would you like to replace it?", "", MessageBoxButtons.YesNo)
+                    Dim result As DialogResult = MessageBox.Show("The file you are trying to use already exists, would you Like to replace it?", "", MessageBoxButtons.YesNo)
 
                     If result = DialogResult.Yes Then
                         File.Replace(InactiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower, ActiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower, False)
@@ -156,7 +171,6 @@ Public Class AllyMods
 
             If selectedItem.Selected Then
                 Try
-                    ' MsgBox(ActiveMods + currentItem.Text + "." + currentItem.SubItems.Item(1).Text.ToLower) 'debug
 
                     If File.Exists(ActiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower) Then
                         File.Move(ActiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower, InactiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower)
@@ -164,7 +178,7 @@ Public Class AllyMods
                     ElseIf Directory.Exists(ActiveMods + selectedItem.Text) Then
 
                     Else
-                        MsgBox(InactiveMods + selectedItem.Text + " is no longer present, did you move it manually?")
+                        MsgBox(InactiveMods + selectedItem.Text + "  is no longer present, have you moved it?")
                         RefreshList()
                         Return
                     End If
@@ -175,17 +189,17 @@ Public Class AllyMods
                     ElseIf Not File.Exists(ActiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower) Then
 
                     Else
-                        MsgBox(InactiveMods + selectedItem.Text + " is no longer present, did you manually move it?")
+                        MsgBox(InactiveMods + selectedItem.Text + " is no longer present, have you moved it?")
                         RefreshList()
                         Return
                     End If
 
                 Catch ex As Exception 'Catch the exception and handle it with replacing functionality, if the file already exists
                     If Not File.Exists(ActiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower) And Directory.Exists(ActiveMods + selectedItem.Text) Then
-                        MsgBox(ActiveMods + selectedItem.Text + " is a directory and it already exists, please rename it before attempting to disable.")
+                        MsgBox(ActiveMods + selectedItem.Text + " is a directory And it already exists, please rename it before attempting to disable.")
                         Return
                     End If
-                    Dim result As DialogResult = MessageBox.Show("The file you are trying to use already exists, would you like to replace it?", "", MessageBoxButtons.YesNo)
+                    Dim result As DialogResult = MessageBox.Show("The file you are trying to use already exists, would you Like to replace it?", "", MessageBoxButtons.YesNo)
 
                     If result = DialogResult.Yes Then
 
@@ -205,11 +219,6 @@ Public Class AllyMods
 
     Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
         RefreshList()
-    End Sub
-
-
-    Private Sub Label1_MouseClick(sender As Object, e As MouseEventArgs) Handles lblError.MouseClick
-        MsgBox("Some of the required files do not exist, AllyMods 2 will fail to run various functions. Proceed at your own risk or verify the integrity of your game's files before re-running this software.", MsgBoxStyle.Critical)
     End Sub
 
     Private Sub EList_DragDrop(sender As Object, e As DragEventArgs) Handles EList.DragDrop
@@ -256,7 +265,6 @@ Public Class AllyMods
 
                 End If
 
-
             Else
                 If Directory.Exists(path) And Not Directory.Exists(InactiveMods + System.IO.Path.GetFileName(path)) Then
                     Directory.Move(path, InactiveMods + System.IO.Path.GetFileName(path))
@@ -286,7 +294,6 @@ Public Class AllyMods
 
         If result = DialogResult.Yes Then
 
-
             For Each selectedItem As ListViewItem In DList.SelectedItems
 
                 If selectedItem.Selected Then
@@ -300,7 +307,7 @@ Public Class AllyMods
 
                         Else
 
-                            MsgBox(InactiveMods + selectedItem.Text + " is no longer present, did you move it manually?")
+                            MsgBox(InactiveMods + selectedItem.Text + "  is no longer present, have you moved it?")
                             RefreshList()
                             Return
                         End If
@@ -311,7 +318,7 @@ Public Class AllyMods
                         ElseIf Not File.Exists(InactiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower) Then
 
                         Else
-                            MsgBox(InactiveMods + selectedItem.Text + " is no longer present, did you move it manually?")
+                            MsgBox(InactiveMods + selectedItem.Text + "  is no longer present, have you moved it?")
                             RefreshList()
                             Return
                         End If
@@ -339,7 +346,7 @@ Public Class AllyMods
 
                         Else
 
-                            MsgBox(ActiveMods + selectedItem.Text + " is no longer present, did you move it manually?")
+                            MsgBox(ActiveMods + selectedItem.Text + "  is no longer present, have you moved it?")
                             RefreshList()
                             Return
                         End If
@@ -350,7 +357,7 @@ Public Class AllyMods
                         ElseIf Not File.Exists(ActiveMods + selectedItem.Text + "." + selectedItem.SubItems.Item(1).Text.ToLower) Then
 
                         Else
-                            MsgBox(ActiveMods + selectedItem.Text + " is no longer present, did you move it manually?")
+                            MsgBox(ActiveMods + selectedItem.Text + "  is no longer present, have you moved it?")
                             RefreshList()
                             Return
                         End If
