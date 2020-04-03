@@ -12,7 +12,7 @@ Public Class AllyMods
     Dim inactiveinfo As New IO.DirectoryInfo(InactiveMods) ' ^
 
     Private Function CoreCheck()
-        If Not Directory.Exists(SimsDocuments) Or Not Directory.Exists(ActiveMods) Then
+        If Not Directory.Exists(SimsDocuments) Then
             CoreCheckBool = False 'Inconclusive check
         Else
             CoreCheckBool = True 'Conclusive     ^
@@ -77,6 +77,15 @@ Public Class AllyMods
         Return r
     End Function
     Private Sub AllyMods_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        If AllyMods2.My.Settings.mbgModifier = True Then
+            Me.BackColor = AllyMods2.My.Settings.MainColor
+        End If
+
+        If AllyMods2.My.Settings.scbgModifier = True Then
+            Me.BorderColor = AllyMods2.My.Settings.SecondaryColor
+        End If
+
 
         '--------- Enable drag-and-drop features
         EList.AllowDrop = True
@@ -398,7 +407,7 @@ Public Class AllyMods
     End Sub
 
     Private Sub btnSettings_Click(sender As Object, e As EventArgs) Handles btnSettings.Click
-        MsgBox("Coming soon!", MsgBoxStyle.Information)
+        Settings.Show()
     End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click

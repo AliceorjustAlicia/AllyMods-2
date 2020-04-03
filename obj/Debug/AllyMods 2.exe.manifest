@@ -42,14 +42,38 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AllyMods 2.exe" size="882600">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AllyMods 2.exe" size="889768">
       <assemblyIdentity name="AllyMods 2" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>oTm98Qn6l4M4KukJUNXHXsqenJvQDJRE3WRQLG7y9iQ=</dsig:DigestValue>
+        <dsig:DigestValue>LbZvgUAZ8DbUrJ3kq9g4zrxDNPd+gUc4nzziNS+TP/8=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Cyotek.Windows.Forms.ColorPicker.dll" size="150528">
+      <assemblyIdentity name="Cyotek.Windows.Forms.ColorPicker" version="1.0.0.0" publicKeyToken="58DAA28B0B2DE221" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>yu9VFXbhoQjnIWo4UfSgy6J4Udec2JvRAOC90Cm2oAI=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MetroFramework.dll" size="152576">
+      <assemblyIdentity name="MetroFramework" version="1.2.0.3" publicKeyToken="5F91A84759BF584A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>uvMm9S05FV1yJGWUf0zGfm6Qz9D4mVTquVlWjpvDQqo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -65,4 +89,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
+  <file name="AllyMods 2.exe.config" size="2520">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>DgNTMmUHBJ6596CyzglyX0Zlq2Qk6fBLUAznK6iNgug=</dsig:DigestValue>
+    </hash>
+  </file>
 </asmv1:assembly>

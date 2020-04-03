@@ -228,9 +228,11 @@ Partial Class AllyMods
         '
         'AllyMods
         '
+        Me.AllowResize = False
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.BackgroundColor = System.Drawing.Color.Empty
         Me.BorderColor = System.Drawing.Color.MediumPurple
         Me.BorderThickness = 3.0!
         Me.ClientSize = New System.Drawing.Size(800, 450)

@@ -15,7 +15,7 @@ Option Explicit On
 Namespace My
     
     <Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.3.0.0"),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.5.0.0"),  _
      Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
     Partial Friend NotInheritable Class MySettings
         Inherits Global.System.Configuration.ApplicationSettingsBase
@@ -52,6 +52,64 @@ Namespace My
 #End If
                 Return defaultInstance
             End Get
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property MainColor() As Global.System.Drawing.Color
+            Get
+                Return CType(Me("MainColor"),Global.System.Drawing.Color)
+            End Get
+            Set
+                Me("MainColor") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property mbgModifier() As Boolean
+            Get
+                Return CType(Me("mbgModifier"),Boolean)
+            End Get
+            Set
+                Me("mbgModifier") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("30, 30, 30")>  _
+        Public Property DefColor() As Global.System.Drawing.Color
+            Get
+                Return CType(Me("DefColor"),Global.System.Drawing.Color)
+            End Get
+            Set
+                Me("DefColor") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property scbgModifier() As Boolean
+            Get
+                Return CType(Me("scbgModifier"),Boolean)
+            End Get
+            Set
+                Me("scbgModifier") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property SecondaryColor() As Global.System.Drawing.Color
+            Get
+                Return CType(Me("SecondaryColor"),Global.System.Drawing.Color)
+            End Get
+            Set
+                Me("SecondaryColor") = value
+            End Set
         End Property
     End Class
 End Namespace
