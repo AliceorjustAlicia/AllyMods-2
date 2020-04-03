@@ -22,6 +22,7 @@ Partial Class Settings
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Settings))
         Me.mbgSwitch = New MetroSet_UI.Controls.MetroSetSwitch()
         Me.btnClose = New System.Windows.Forms.PictureBox()
         Me.ColorWheel = New Cyotek.Windows.Forms.ColorWheel()
@@ -146,6 +147,7 @@ Partial Class Settings
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.mbgSwitch)
         Me.HeaderColor = System.Drawing.Color.MediumPurple
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Settings"
         Me.Padding = New System.Windows.Forms.Padding(2, 60, 2, 2)
         Me.ShowHeader = True

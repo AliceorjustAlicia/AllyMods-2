@@ -23,6 +23,7 @@ Partial Class AllyMods
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AllyMods))
         Me.EList = New System.Windows.Forms.ListView()
         Me.ColName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColType = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -247,6 +248,7 @@ Partial Class AllyMods
         Me.Controls.Add(Me.DList)
         Me.Controls.Add(Me.EList)
         Me.HeaderColor = System.Drawing.Color.MediumPurple
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "AllyMods"
         Me.Padding = New System.Windows.Forms.Padding(12, 90, 12, 12)
         Me.ShowTitle = False
