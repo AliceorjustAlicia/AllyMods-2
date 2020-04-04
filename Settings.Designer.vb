@@ -34,6 +34,9 @@ Partial Class Settings
         Me.lbl3 = New System.Windows.Forms.Label()
         Me.ColorWheel3 = New Cyotek.Windows.Forms.ColorWheel()
         Me.borderSwitch = New MetroSet_UI.Controls.MetroSetSwitch()
+        Me.HexEditor1 = New MetroSet_UI.Controls.MetroSetTextBox()
+        Me.HexEditor2 = New MetroSet_UI.Controls.MetroSetTextBox()
+        Me.HexEditor3 = New MetroSet_UI.Controls.MetroSetTextBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnClose, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -149,16 +152,16 @@ Partial Class Settings
         'lbl3
         '
         Me.lbl3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl3.Location = New System.Drawing.Point(331, 48)
+        Me.lbl3.Location = New System.Drawing.Point(333, 48)
         Me.lbl3.Name = "lbl3"
-        Me.lbl3.Size = New System.Drawing.Size(67, 29)
+        Me.lbl3.Size = New System.Drawing.Size(76, 29)
         Me.lbl3.TabIndex = 20
-        Me.lbl3.Text = "Main color"
+        Me.lbl3.Text = "Border color"
         '
         'ColorWheel3
         '
         Me.ColorWheel3.Color = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.ColorWheel3.Location = New System.Drawing.Point(399, 32)
+        Me.ColorWheel3.Location = New System.Drawing.Point(401, 32)
         Me.ColorWheel3.Name = "ColorWheel3"
         Me.ColorWheel3.Size = New System.Drawing.Size(133, 122)
         Me.ColorWheel3.TabIndex = 19
@@ -175,7 +178,7 @@ Partial Class Settings
         Me.borderSwitch.DisabledBorderColor = System.Drawing.Color.FromArgb(CType(CType(205, Byte), Integer), CType(CType(205, Byte), Integer), CType(CType(205, Byte), Integer))
         Me.borderSwitch.DisabledCheckColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.borderSwitch.DisabledUnCheckColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(205, Byte), Integer), CType(CType(205, Byte), Integer), CType(CType(205, Byte), Integer))
-        Me.borderSwitch.Location = New System.Drawing.Point(335, 83)
+        Me.borderSwitch.Location = New System.Drawing.Point(337, 83)
         Me.borderSwitch.Name = "borderSwitch"
         Me.borderSwitch.Size = New System.Drawing.Size(58, 22)
         Me.borderSwitch.Style = MetroSet_UI.Design.Style.Light
@@ -188,6 +191,96 @@ Partial Class Settings
         Me.borderSwitch.ThemeName = "MetroLite"
         Me.borderSwitch.UnCheckColor = System.Drawing.Color.FromArgb(CType(CType(155, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(155, Byte), Integer))
         '
+        'HexEditor1
+        '
+        Me.HexEditor1.AutoCompleteCustomSource = Nothing
+        Me.HexEditor1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None
+        Me.HexEditor1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None
+        Me.HexEditor1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(155, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.HexEditor1.DisabledBackColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.HexEditor1.DisabledBorderColor = System.Drawing.Color.FromArgb(CType(CType(155, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.HexEditor1.DisabledForeColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer))
+        Me.HexEditor1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.HexEditor1.HoverColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.HexEditor1.Image = Nothing
+        Me.HexEditor1.Lines = Nothing
+        Me.HexEditor1.Location = New System.Drawing.Point(13, 112)
+        Me.HexEditor1.MaxLength = 32767
+        Me.HexEditor1.Multiline = False
+        Me.HexEditor1.Name = "HexEditor1"
+        Me.HexEditor1.ReadOnly = False
+        Me.HexEditor1.Size = New System.Drawing.Size(60, 30)
+        Me.HexEditor1.Style = MetroSet_UI.Design.Style.Light
+        Me.HexEditor1.StyleManager = Nothing
+        Me.HexEditor1.TabIndex = 21
+        Me.HexEditor1.Text = "#"
+        Me.HexEditor1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.HexEditor1.ThemeAuthor = "Narwin"
+        Me.HexEditor1.ThemeName = "MetroLite"
+        Me.HexEditor1.UseSystemPasswordChar = False
+        Me.HexEditor1.Visible = False
+        Me.HexEditor1.WatermarkText = ""
+        '
+        'HexEditor2
+        '
+        Me.HexEditor2.AutoCompleteCustomSource = Nothing
+        Me.HexEditor2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None
+        Me.HexEditor2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None
+        Me.HexEditor2.BorderColor = System.Drawing.Color.FromArgb(CType(CType(155, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.HexEditor2.DisabledBackColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.HexEditor2.DisabledBorderColor = System.Drawing.Color.FromArgb(CType(CType(155, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.HexEditor2.DisabledForeColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer))
+        Me.HexEditor2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.HexEditor2.HoverColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.HexEditor2.Image = Nothing
+        Me.HexEditor2.Lines = Nothing
+        Me.HexEditor2.Location = New System.Drawing.Point(10, 253)
+        Me.HexEditor2.MaxLength = 32767
+        Me.HexEditor2.Multiline = False
+        Me.HexEditor2.Name = "HexEditor2"
+        Me.HexEditor2.ReadOnly = False
+        Me.HexEditor2.Size = New System.Drawing.Size(60, 30)
+        Me.HexEditor2.Style = MetroSet_UI.Design.Style.Light
+        Me.HexEditor2.StyleManager = Nothing
+        Me.HexEditor2.TabIndex = 22
+        Me.HexEditor2.Text = "#"
+        Me.HexEditor2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.HexEditor2.ThemeAuthor = "Narwin"
+        Me.HexEditor2.ThemeName = "MetroLite"
+        Me.HexEditor2.UseSystemPasswordChar = False
+        Me.HexEditor2.Visible = False
+        Me.HexEditor2.WatermarkText = ""
+        '
+        'HexEditor3
+        '
+        Me.HexEditor3.AutoCompleteCustomSource = Nothing
+        Me.HexEditor3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None
+        Me.HexEditor3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None
+        Me.HexEditor3.BorderColor = System.Drawing.Color.FromArgb(CType(CType(155, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.HexEditor3.DisabledBackColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.HexEditor3.DisabledBorderColor = System.Drawing.Color.FromArgb(CType(CType(155, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.HexEditor3.DisabledForeColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer))
+        Me.HexEditor3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.HexEditor3.HoverColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.HexEditor3.Image = Nothing
+        Me.HexEditor3.Lines = Nothing
+        Me.HexEditor3.Location = New System.Drawing.Point(336, 112)
+        Me.HexEditor3.MaxLength = 32767
+        Me.HexEditor3.Multiline = False
+        Me.HexEditor3.Name = "HexEditor3"
+        Me.HexEditor3.ReadOnly = False
+        Me.HexEditor3.Size = New System.Drawing.Size(60, 30)
+        Me.HexEditor3.Style = MetroSet_UI.Design.Style.Light
+        Me.HexEditor3.StyleManager = Nothing
+        Me.HexEditor3.TabIndex = 23
+        Me.HexEditor3.Text = "#"
+        Me.HexEditor3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.HexEditor3.ThemeAuthor = "Narwin"
+        Me.HexEditor3.ThemeName = "MetroLite"
+        Me.HexEditor3.UseSystemPasswordChar = False
+        Me.HexEditor3.Visible = False
+        Me.HexEditor3.WatermarkText = ""
+        '
         'Settings
         '
         Me.AllowResize = False
@@ -197,6 +290,9 @@ Partial Class Settings
         Me.BackgroundColor = System.Drawing.Color.Empty
         Me.BorderColor = System.Drawing.Color.MediumPurple
         Me.ClientSize = New System.Drawing.Size(553, 336)
+        Me.Controls.Add(Me.HexEditor3)
+        Me.Controls.Add(Me.HexEditor2)
+        Me.Controls.Add(Me.HexEditor1)
         Me.Controls.Add(Me.lbl3)
         Me.Controls.Add(Me.ColorWheel3)
         Me.Controls.Add(Me.borderSwitch)
@@ -238,4 +334,7 @@ Partial Class Settings
     Friend WithEvents lbl3 As Label
     Friend WithEvents ColorWheel3 As Cyotek.Windows.Forms.ColorWheel
     Friend WithEvents borderSwitch As MetroSet_UI.Controls.MetroSetSwitch
+    Friend WithEvents HexEditor1 As MetroSet_UI.Controls.MetroSetTextBox
+    Friend WithEvents HexEditor2 As MetroSet_UI.Controls.MetroSetTextBox
+    Friend WithEvents HexEditor3 As MetroSet_UI.Controls.MetroSetTextBox
 End Class
