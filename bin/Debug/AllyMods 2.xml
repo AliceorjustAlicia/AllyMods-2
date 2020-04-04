@@ -27,6 +27,11 @@ AllyMods 2
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:AllyMods2.My.Resources.Resources.divider">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:AllyMods2.My.Resources.Resources.loading">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.

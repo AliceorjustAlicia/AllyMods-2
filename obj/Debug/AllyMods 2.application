@@ -7,14 +7,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="AllyMods 2.exe.manifest" size="5994">
+    <dependentAssembly dependencyType="install" codebase="AllyMods 2.exe.manifest" size="5710">
       <assemblyIdentity name="AllyMods 2.exe" version="1.0.0.3" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>9wmiMIPCZU2gAhzHdJiD2K8AATtNwBH3emFhWGjJl0Q=</dsig:DigestValue>
+        <dsig:DigestValue>RUUcdIJMuIq4JqAnnbyGnCKduEXiPEMGSLfGYA9z4+8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

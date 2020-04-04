@@ -124,3 +124,5 @@ C:\Users\Alice\Source\Repos\AliceorjustAlicia\AllyMods-2\obj\Debug\AllyMods 2.xm
 C:\Users\Alice\Source\Repos\AliceorjustAlicia\AllyMods-2\obj\Debug\AllyMods 2.pdb
 C:\Users\Alice\Source\Repos\AliceorjustAlicia\AllyMods-2\bin\Debug\AllyMods 2.exe.config
 C:\Users\Alice\Source\Repos\AliceorjustAlicia\AllyMods-2\obj\Debug\AllyMods.vbprojAssemblyReference.cache
+C:\Users\Alice\Source\Repos\AllyMods-2\bin\Debug\AllyMods 2.exe.config
+C:\Users\Alice\Source\Repos\AllyMods-2\obj\Debug\AllyMods2.Settings.resources

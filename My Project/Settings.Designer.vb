@@ -79,6 +79,29 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property headerModifier() As Boolean
+            Get
+                Return CType(Me("headerModifier"),Boolean)
+            End Get
+            Set
+                Me("headerModifier") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property headerColor() As Global.System.Drawing.Color
+            Get
+                Return CType(Me("headerColor"),Global.System.Drawing.Color)
+            End Get
+            Set
+                Me("headerColor") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("30, 30, 30")>  _
         Public Property DefColor() As Global.System.Drawing.Color
             Get
@@ -92,23 +115,23 @@ Namespace My
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
-        Public Property scbgModifier() As Boolean
+        Public Property borderModifier() As Boolean
             Get
-                Return CType(Me("scbgModifier"),Boolean)
+                Return CType(Me("borderModifier"),Boolean)
             End Get
             Set
-                Me("scbgModifier") = value
+                Me("borderModifier") = value
             End Set
         End Property
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Property SecondaryColor() As Global.System.Drawing.Color
+        Public Property borderColor() As Global.System.Drawing.Color
             Get
-                Return CType(Me("SecondaryColor"),Global.System.Drawing.Color)
+                Return CType(Me("borderColor"),Global.System.Drawing.Color)
             End Get
             Set
-                Me("SecondaryColor") = value
+                Me("borderColor") = value
             End Set
         End Property
     End Class

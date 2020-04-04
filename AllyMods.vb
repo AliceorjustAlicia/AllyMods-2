@@ -82,8 +82,12 @@ Public Class AllyMods
             Me.BackColor = AllyMods2.My.Settings.MainColor
         End If
 
-        If AllyMods2.My.Settings.scbgModifier = True Then
-            Me.BorderColor = AllyMods2.My.Settings.SecondaryColor
+        If AllyMods2.My.Settings.headerModifier = True Then
+            Me.HeaderColor = AllyMods2.My.Settings.headerColor
+        End If
+
+        If AllyMods2.My.Settings.borderModifier = True Then
+            Me.BorderColor = AllyMods2.My.Settings.borderColor
         End If
 
 

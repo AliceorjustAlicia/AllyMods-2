@@ -8,13 +8,19 @@
     <Setting Name="mbgModifier" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="headerModifier" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="headerColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
     <Setting Name="DefColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">30, 30, 30</Value>
     </Setting>
-    <Setting Name="scbgModifier" Type="System.Boolean" Scope="User">
+    <Setting Name="borderModifier" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="SecondaryColor" Type="System.Drawing.Color" Scope="User">
+    <Setting Name="borderColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>
