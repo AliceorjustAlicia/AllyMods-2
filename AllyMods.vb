@@ -19,43 +19,50 @@ Public Class AllyMods
         End If
 
     End Function
-
     Private Function RefreshList()
-        EList.Items.Clear()
-        DList.Items.Clear()
+        Try
+            EList.Items.Clear()
+            DList.Items.Clear()
 
-        If Not Directory.Exists(InactiveMods) Then
-            Directory.CreateDirectory(InactiveMods)
-            Dim inactiveinfo As New IO.DirectoryInfo(InactiveMods)
-        End If
+            If Not Directory.Exists(InactiveMods) Then
+                Directory.CreateDirectory(InactiveMods)
+                Dim inactiveinfo As New IO.DirectoryInfo(InactiveMods)
+            End If
 
-        ' Active folder code
-        For Each file In activeinfo.GetFiles
+            ' Active folder code
+            For Each file In activeinfo.GetFiles
 
-            EList.Items.Add(Path.GetFileNameWithoutExtension(file.ToString)).SubItems.Add(file.Extension.Remove(0, 1).ToUpper)
+                EList.Items.Add(Path.GetFileNameWithoutExtension(file.ToString)).SubItems.Add(file.Extension.Remove(0, 1).ToUpper)
 
-        Next
+            Next
 
-        For Each folder In activeinfo.GetDirectories
+            For Each folder In activeinfo.GetDirectories
 
-            EList.Items.Add(folder.Name).SubItems.Add("FOLDER")
+                EList.Items.Add(folder.Name).SubItems.Add("FOLDER")
 
-        Next
-        ' End active folder code
+            Next
+            ' End active folder code
 
-        ' Inactive folder code
-        For Each file In inactiveinfo.GetFiles
+            ' Inactive folder code
+            For Each file In inactiveinfo.GetFiles
 
-            DList.Items.Add(Path.GetFileNameWithoutExtension(file.ToString)).SubItems.Add(file.Extension.Remove(0, 1).ToUpper)
+                DList.Items.Add(Path.GetFileNameWithoutExtension(file.ToString)).SubItems.Add(file.Extension.Remove(0, 1).ToUpper)
 
-        Next
+            Next
 
-        For Each folder In inactiveinfo.GetDirectories
+            For Each folder In inactiveinfo.GetDirectories
 
-            DList.Items.Add(folder.Name).SubItems.Add("FOLDER")
+                DList.Items.Add(folder.Name).SubItems.Add("FOLDER")
 
-        Next
-        ' End inactive folder code
+            Next
+            ' End inactive folder code
+
+        Catch ex As Exception
+            DeployCrashLog(ex.ToString)
+            Process.Start(AppDocuments + "crashlogs.txt")
+            Application.Exit()
+        End Try
+
 
     End Function
 
