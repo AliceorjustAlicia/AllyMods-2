@@ -5,7 +5,6 @@ C:\Users\Alice\Source\Repos\AllyMods-2\bin\Debug\AllyMods 2.exe
 C:\Users\Alice\Source\Repos\AllyMods-2\bin\Debug\AllyMods 2.pdb
 C:\Users\Alice\Source\Repos\AllyMods-2\bin\Debug\AllyMods 2.xml
 C:\Users\Alice\Source\Repos\AllyMods-2\bin\Debug\MetroSet UI.dll
-C:\Users\Alice\Source\Repos\AllyMods-2\obj\Debug\AllyMods.vbprojAssemblyReference.cache
 C:\Users\Alice\Source\Repos\AllyMods-2\obj\Debug\AllyMods2.AllyMods.resources
 C:\Users\Alice\Source\Repos\AllyMods-2\obj\Debug\AllyMods2.Resources.resources
 C:\Users\Alice\Source\Repos\AllyMods-2\obj\Debug\AllyMods2.Settings.resources
