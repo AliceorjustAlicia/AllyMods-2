@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AllyMods 2.exe" size="1216936">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AllyMods 2.exe" size="1221032">
       <assemblyIdentity name="AllyMods 2" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ao57yNFQuiA3y5F3HHenqVhiAebowu84GTEEj1dQR7U=</dsig:DigestValue>
+        <dsig:DigestValue>zxQrYl9wpntqxrv2yrL03UX6BLDej9nrN0tEVCbS4ao=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

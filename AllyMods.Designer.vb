@@ -23,13 +23,8 @@ Partial Class AllyMods
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AllyMods))
-        Me.EList = New System.Windows.Forms.ListView()
-        Me.ColName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColType = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.DList = New System.Windows.Forms.ListView()
-        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btnRefresh = New System.Windows.Forms.Button()
         Me.lblError = New System.Windows.Forms.Label()
         Me.btnDelete = New System.Windows.Forms.Button()
@@ -39,58 +34,17 @@ Partial Class AllyMods
         Me.btnDisable = New MetroSet_UI.Controls.MetroSetButton()
         Me.btnClose = New System.Windows.Forms.PictureBox()
         Me.btnMinimize = New System.Windows.Forms.PictureBox()
+        Me.ImageList = New System.Windows.Forms.ImageList(Me.components)
+        Me.EList = New System.Windows.Forms.ListView()
+        Me.Empty = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Type = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.DList = New System.Windows.Forms.ListView()
+        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         CType(Me.btnSettings, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnClose, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnMinimize, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'EList
-        '
-        Me.EList.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColName, Me.ColType})
-        Me.EList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
-        Me.EList.HideSelection = False
-        Me.EList.Location = New System.Drawing.Point(159, 7)
-        Me.EList.Name = "EList"
-        Me.EList.Size = New System.Drawing.Size(634, 213)
-        Me.EList.TabIndex = 0
-        Me.EList.TabStop = False
-        Me.EList.UseCompatibleStateImageBehavior = False
-        Me.EList.View = System.Windows.Forms.View.Details
-        '
-        'ColName
-        '
-        Me.ColName.Text = "Name:"
-        Me.ColName.Width = 300
-        '
-        'ColType
-        '
-        Me.ColType.Text = "Type:"
-        Me.ColType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColType.Width = 150
-        '
-        'DList
-        '
-        Me.DList.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2})
-        Me.DList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
-        Me.DList.HideSelection = False
-        Me.DList.Location = New System.Drawing.Point(159, 229)
-        Me.DList.Name = "DList"
-        Me.DList.Size = New System.Drawing.Size(634, 213)
-        Me.DList.TabIndex = 1
-        Me.DList.TabStop = False
-        Me.DList.UseCompatibleStateImageBehavior = False
-        Me.DList.View = System.Windows.Forms.View.Details
-        '
-        'ColumnHeader1
-        '
-        Me.ColumnHeader1.Text = "Name:"
-        Me.ColumnHeader1.Width = 300
-        '
-        'ColumnHeader2
-        '
-        Me.ColumnHeader2.Text = "Type:"
-        Me.ColumnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader2.Width = 150
         '
         'btnRefresh
         '
@@ -227,6 +181,59 @@ Partial Class AllyMods
         Me.btnMinimize.TabIndex = 11
         Me.btnMinimize.TabStop = False
         '
+        'ImageList
+        '
+        Me.ImageList.ImageStream = CType(resources.GetObject("ImageList.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImageList.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageList.Images.SetKeyName(0, "directory.png")
+        Me.ImageList.Images.SetKeyName(1, "file.png")
+        '
+        'EList
+        '
+        Me.EList.Alignment = System.Windows.Forms.ListViewAlignment.Left
+        Me.EList.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Empty, Me.Type})
+        Me.EList.HideSelection = False
+        Me.EList.LargeImageList = Me.ImageList
+        Me.EList.Location = New System.Drawing.Point(159, 7)
+        Me.EList.Name = "EList"
+        Me.EList.Size = New System.Drawing.Size(634, 213)
+        Me.EList.SmallImageList = Me.ImageList
+        Me.EList.StateImageList = Me.ImageList
+        Me.EList.TabIndex = 12
+        Me.EList.UseCompatibleStateImageBehavior = False
+        Me.EList.View = System.Windows.Forms.View.Tile
+        '
+        'Empty
+        '
+        Me.Empty.Text = ""
+        '
+        'Type
+        '
+        Me.Type.Text = ""
+        '
+        'DList
+        '
+        Me.DList.Alignment = System.Windows.Forms.ListViewAlignment.Left
+        Me.DList.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader3, Me.ColumnHeader4})
+        Me.DList.HideSelection = False
+        Me.DList.LargeImageList = Me.ImageList
+        Me.DList.Location = New System.Drawing.Point(159, 228)
+        Me.DList.Name = "DList"
+        Me.DList.Size = New System.Drawing.Size(634, 213)
+        Me.DList.SmallImageList = Me.ImageList
+        Me.DList.StateImageList = Me.ImageList
+        Me.DList.TabIndex = 13
+        Me.DList.UseCompatibleStateImageBehavior = False
+        Me.DList.View = System.Windows.Forms.View.Tile
+        '
+        'ColumnHeader3
+        '
+        Me.ColumnHeader3.Text = ""
+        '
+        'ColumnHeader4
+        '
+        Me.ColumnHeader4.Text = ""
+        '
         'AllyMods
         '
         Me.AllowResize = False
@@ -237,6 +244,8 @@ Partial Class AllyMods
         Me.BorderColor = System.Drawing.Color.MediumPurple
         Me.BorderThickness = 3.0!
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.DList)
+        Me.Controls.Add(Me.EList)
         Me.Controls.Add(Me.btnMinimize)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.btnDisable)
@@ -245,8 +254,6 @@ Partial Class AllyMods
         Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.lblError)
         Me.Controls.Add(Me.btnRefresh)
-        Me.Controls.Add(Me.DList)
-        Me.Controls.Add(Me.EList)
         Me.HeaderColor = System.Drawing.Color.MediumPurple
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "AllyMods"
@@ -267,13 +274,6 @@ Partial Class AllyMods
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents EList As ListView
-    Friend WithEvents ColName As ColumnHeader
-    Friend WithEvents ColType As ColumnHeader
-    Friend WithEvents DList As ListView
-    Friend WithEvents ColumnHeader1 As ColumnHeader
-    Friend WithEvents ColumnHeader2 As ColumnHeader
     Friend WithEvents btnRefresh As Button
     Friend WithEvents lblError As Label
     Friend WithEvents btnDelete As Button
@@ -283,4 +283,11 @@ Partial Class AllyMods
     Friend WithEvents btnDisable As MetroSet_UI.Controls.MetroSetButton
     Friend WithEvents btnMinimize As PictureBox
     Friend WithEvents btnClose As PictureBox
+    Friend WithEvents EList As ListView
+    Friend WithEvents ImageList As ImageList
+    Friend WithEvents Empty As ColumnHeader
+    Friend WithEvents Type As ColumnHeader
+    Friend WithEvents DList As ListView
+    Friend WithEvents ColumnHeader3 As ColumnHeader
+    Friend WithEvents ColumnHeader4 As ColumnHeader
 End Class
