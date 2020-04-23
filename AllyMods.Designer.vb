@@ -34,13 +34,11 @@ Partial Class AllyMods
         Me.btnDisable = New MetroSet_UI.Controls.MetroSetButton()
         Me.btnClose = New System.Windows.Forms.PictureBox()
         Me.btnMinimize = New System.Windows.Forms.PictureBox()
-        Me.ImagesList = New System.Windows.Forms.ImageList(Me.components)
         Me.EList = New System.Windows.Forms.ListView()
-        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.DList = New System.Windows.Forms.ListView()
-        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ImageList = New System.Windows.Forms.ImageList(Me.components)
+        Me.Empty = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Type = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         CType(Me.btnSettings, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnClose, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnMinimize, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -181,19 +179,13 @@ Partial Class AllyMods
         Me.btnMinimize.TabIndex = 11
         Me.btnMinimize.TabStop = False
         '
-        'ImagesList
-        '
-        Me.ImagesList.ImageStream = CType(resources.GetObject("ImagesList.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.ImagesList.TransparentColor = System.Drawing.Color.Transparent
-        Me.ImagesList.Images.SetKeyName(0, "download.png")
-        Me.ImagesList.Images.SetKeyName(1, "download (1).png")
-        '
         'EList
         '
+        Me.EList.Activation = System.Windows.Forms.ItemActivation.OneClick
         Me.EList.Alignment = System.Windows.Forms.ListViewAlignment.Left
-        Me.EList.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader3, Me.ColumnHeader4})
+        Me.EList.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Empty, Me.Type})
         Me.EList.HideSelection = False
-        Me.EList.LargeImageList = Me.ImagesList
+        Me.EList.LargeImageList = Me.ImageList
         Me.EList.Location = New System.Drawing.Point(159, 7)
         Me.EList.Name = "EList"
         Me.EList.Size = New System.Drawing.Size(634, 213)
@@ -201,36 +193,33 @@ Partial Class AllyMods
         Me.EList.UseCompatibleStateImageBehavior = False
         Me.EList.View = System.Windows.Forms.View.Tile
         '
-        'ColumnHeader3
-        '
-        Me.ColumnHeader3.Text = "Name:"
-        '
-        'ColumnHeader4
-        '
-        Me.ColumnHeader4.Text = "Type:"
-        Me.ColumnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'DList
         '
         Me.DList.Alignment = System.Windows.Forms.ListViewAlignment.Left
-        Me.DList.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader5, Me.ColumnHeader6})
         Me.DList.HideSelection = False
-        Me.DList.LargeImageList = Me.ImagesList
+        Me.DList.LargeImageList = Me.ImageList
         Me.DList.Location = New System.Drawing.Point(159, 229)
         Me.DList.Name = "DList"
         Me.DList.Size = New System.Drawing.Size(634, 213)
+        Me.DList.SmallImageList = Me.ImageList
         Me.DList.TabIndex = 13
         Me.DList.UseCompatibleStateImageBehavior = False
         Me.DList.View = System.Windows.Forms.View.Tile
         '
-        'ColumnHeader5
+        'ImageList
         '
-        Me.ColumnHeader5.Text = "Name:"
+        Me.ImageList.ImageStream = CType(resources.GetObject("ImageList.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImageList.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageList.Images.SetKeyName(0, "file.png")
+        Me.ImageList.Images.SetKeyName(1, "directory.png")
         '
-        'ColumnHeader6
+        'Empty
         '
-        Me.ColumnHeader6.Text = "Type:"
-        Me.ColumnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.Empty.Text = ""
+        '
+        'Type
+        '
+        Me.Type.Text = ""
         '
         'AllyMods
         '
@@ -281,11 +270,9 @@ Partial Class AllyMods
     Friend WithEvents btnDisable As MetroSet_UI.Controls.MetroSetButton
     Friend WithEvents btnMinimize As PictureBox
     Friend WithEvents btnClose As PictureBox
-    Friend WithEvents ImagesList As ImageList
-    Friend WithEvents EList As ListView
-    Friend WithEvents ColumnHeader3 As ColumnHeader
-    Friend WithEvents ColumnHeader4 As ColumnHeader
     Friend WithEvents DList As ListView
-    Friend WithEvents ColumnHeader5 As ColumnHeader
-    Friend WithEvents ColumnHeader6 As ColumnHeader
+    Friend WithEvents ImageList As ImageList
+    Friend WithEvents EList As ListView
+    Friend WithEvents Empty As ColumnHeader
+    Friend WithEvents Type As ColumnHeader
 End Class

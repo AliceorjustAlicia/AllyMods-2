@@ -16,4 +16,3 @@ C:\Users\Alice\Source\Repos\AllyMods-2\obj\Debug\AllyMods.vbproj.CopyComplete
 C:\Users\Alice\Source\Repos\AllyMods-2\obj\Debug\AllyMods 2.exe
 C:\Users\Alice\Source\Repos\AllyMods-2\obj\Debug\AllyMods 2.xml
 C:\Users\Alice\Source\Repos\AllyMods-2\obj\Debug\AllyMods 2.pdb
-C:\Users\Alice\Source\Repos\AllyMods-2\obj\Debug\AllyMods.vbprojAssemblyReference.cache

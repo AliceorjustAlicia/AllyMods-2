@@ -52,7 +52,7 @@ Partial Class Settings
         Me.mbgSwitch.DisabledBorderColor = System.Drawing.Color.FromArgb(CType(CType(205, Byte), Integer), CType(CType(205, Byte), Integer), CType(CType(205, Byte), Integer))
         Me.mbgSwitch.DisabledCheckColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.mbgSwitch.DisabledUnCheckColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(205, Byte), Integer), CType(CType(205, Byte), Integer), CType(CType(205, Byte), Integer))
-        Me.mbgSwitch.Location = New System.Drawing.Point(20, 83)
+        Me.mbgSwitch.Location = New System.Drawing.Point(14, 83)
         Me.mbgSwitch.Name = "mbgSwitch"
         Me.mbgSwitch.Size = New System.Drawing.Size(58, 22)
         Me.mbgSwitch.Style = MetroSet_UI.Design.Style.Light
@@ -68,7 +68,7 @@ Partial Class Settings
         'ColorWheel
         '
         Me.ColorWheel.Color = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.ColorWheel.Location = New System.Drawing.Point(84, 32)
+        Me.ColorWheel.Location = New System.Drawing.Point(78, 32)
         Me.ColorWheel.Name = "ColorWheel"
         Me.ColorWheel.Size = New System.Drawing.Size(133, 122)
         Me.ColorWheel.TabIndex = 12
@@ -77,7 +77,7 @@ Partial Class Settings
         'lbl1
         '
         Me.lbl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl1.Location = New System.Drawing.Point(16, 48)
+        Me.lbl1.Location = New System.Drawing.Point(10, 48)
         Me.lbl1.Name = "lbl1"
         Me.lbl1.Size = New System.Drawing.Size(67, 29)
         Me.lbl1.TabIndex = 13
@@ -86,7 +86,7 @@ Partial Class Settings
         'lbl2
         '
         Me.lbl2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl2.Location = New System.Drawing.Point(13, 190)
+        Me.lbl2.Location = New System.Drawing.Point(7, 190)
         Me.lbl2.Name = "lbl2"
         Me.lbl2.Size = New System.Drawing.Size(67, 32)
         Me.lbl2.TabIndex = 16
@@ -96,7 +96,7 @@ Partial Class Settings
         'ColorWheel2
         '
         Me.ColorWheel2.Color = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.ColorWheel2.Location = New System.Drawing.Point(81, 175)
+        Me.ColorWheel2.Location = New System.Drawing.Point(75, 175)
         Me.ColorWheel2.Name = "ColorWheel2"
         Me.ColorWheel2.Size = New System.Drawing.Size(133, 122)
         Me.ColorWheel2.TabIndex = 15
@@ -113,7 +113,7 @@ Partial Class Settings
         Me.sbgSwitch.DisabledBorderColor = System.Drawing.Color.FromArgb(CType(CType(205, Byte), Integer), CType(CType(205, Byte), Integer), CType(CType(205, Byte), Integer))
         Me.sbgSwitch.DisabledCheckColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.sbgSwitch.DisabledUnCheckColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(205, Byte), Integer), CType(CType(205, Byte), Integer), CType(CType(205, Byte), Integer))
-        Me.sbgSwitch.Location = New System.Drawing.Point(17, 226)
+        Me.sbgSwitch.Location = New System.Drawing.Point(11, 226)
         Me.sbgSwitch.Name = "sbgSwitch"
         Me.sbgSwitch.Size = New System.Drawing.Size(58, 22)
         Me.sbgSwitch.Style = MetroSet_UI.Design.Style.Light
@@ -130,7 +130,7 @@ Partial Class Settings
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Image = Global.AllyMods2.My.Resources.Resources.divider
-        Me.PictureBox1.Location = New System.Drawing.Point(225, 32)
+        Me.PictureBox1.Location = New System.Drawing.Point(231, 32)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(93, 299)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -204,7 +204,7 @@ Partial Class Settings
         Me.HexEditor1.HoverColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.HexEditor1.Image = Nothing
         Me.HexEditor1.Lines = Nothing
-        Me.HexEditor1.Location = New System.Drawing.Point(19, 112)
+        Me.HexEditor1.Location = New System.Drawing.Point(13, 112)
         Me.HexEditor1.MaxLength = 32767
         Me.HexEditor1.Multiline = False
         Me.HexEditor1.Name = "HexEditor1"
@@ -234,7 +234,7 @@ Partial Class Settings
         Me.HexEditor2.HoverColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.HexEditor2.Image = Nothing
         Me.HexEditor2.Lines = Nothing
-        Me.HexEditor2.Location = New System.Drawing.Point(16, 253)
+        Me.HexEditor2.Location = New System.Drawing.Point(10, 253)
         Me.HexEditor2.MaxLength = 32767
         Me.HexEditor2.Multiline = False
         Me.HexEditor2.Name = "HexEditor2"
