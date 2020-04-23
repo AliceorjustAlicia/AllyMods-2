@@ -32,13 +32,13 @@ Public Class AllyMods
             ' Active folder code
             For Each file In activeinfo.GetFiles
 
-                EList.Items.Add(Path.GetFileNameWithoutExtension(file.ToString), ImageList.Images.Count() - 2).SubItems.Add(file.Extension.Remove(0, 1).ToUpper)
+                EList.Items.Add(Path.GetFileNameWithoutExtension(file.ToString)).SubItems.Add(file.Extension.Remove(0, 1).ToUpper)
 
             Next
 
             For Each folder In activeinfo.GetDirectories
 
-                EList.Items.Add(folder.Name, ImageList.Images.Count() - 1).SubItems.Add("FOLDER")
+                EList.Items.Add(folder.Name).SubItems.Add("FOLDER")
 
             Next
             ' End active folder code
@@ -46,13 +46,13 @@ Public Class AllyMods
             ' Inactive folder code
             For Each file In inactiveinfo.GetFiles
 
-                DList.Items.Add(Path.GetFileNameWithoutExtension(file.ToString), ImageList.Images.Count() - 2).SubItems.Add(file.Extension.Remove(0, 1).ToUpper)
+                DList.Items.Add(Path.GetFileNameWithoutExtension(file.ToString)).SubItems.Add(file.Extension.Remove(0, 1).ToUpper)
 
             Next
 
             For Each folder In inactiveinfo.GetDirectories
 
-                DList.Items.Add(folder.Name, ImageList.Images.Count() - 1).SubItems.Add("FOLDER")
+                DList.Items.Add(folder.Name).SubItems.Add("FOLDER")
 
             Next
             ' End inactive folder code
@@ -243,7 +243,7 @@ Public Class AllyMods
         RefreshList()
     End Sub
 
-    Private Sub EList_DragDrop(sender As Object, e As DragEventArgs)
+    Private Sub EList_DragDrop(sender As Object, e As DragEventArgs) Handles EList.DragDrop
         Dim files() As String = e.Data.GetData(DataFormats.FileDrop)
         For Each path In files
 
@@ -268,13 +268,13 @@ Public Class AllyMods
         Next
     End Sub
 
-    Private Sub EList_DragEnter(sender As Object, e As DragEventArgs)
+    Private Sub EList_DragEnter(sender As Object, e As DragEventArgs) Handles EList.DragEnter
         If e.Data.GetDataPresent(DataFormats.FileDrop) Then
             e.Effect = DragDropEffects.Copy
         End If
     End Sub
 
-    Private Sub DList_DragDrop(sender As Object, e As DragEventArgs)
+    Private Sub DList_DragDrop(sender As Object, e As DragEventArgs) Handles DList.DragDrop
         Dim files() As String = e.Data.GetData(DataFormats.FileDrop)
         For Each path In files
 
@@ -300,7 +300,7 @@ Public Class AllyMods
         Next
     End Sub
 
-    Private Sub DList_DragEnter(sender As Object, e As DragEventArgs)
+    Private Sub DList_DragEnter(sender As Object, e As DragEventArgs) Handles DList.DragEnter
         If e.Data.GetDataPresent(DataFormats.FileDrop) Then
             e.Effect = DragDropEffects.Copy
         End If
