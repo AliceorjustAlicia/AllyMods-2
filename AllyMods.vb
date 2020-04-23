@@ -32,13 +32,13 @@ Public Class AllyMods
             ' Active folder code
             For Each file In activeinfo.GetFiles
 
-                EList.Items.Add(Path.GetFileNameWithoutExtension(file.ToString)).SubItems.Add(file.Extension.Remove(0, 1).ToUpper)
+                EList.Items.Add(Path.GetFileNameWithoutExtension(file.ToString), ImagesList.Images.Count() - 1).SubItems.Add(file.Extension.Remove(0, 1).ToUpper)
 
             Next
 
             For Each folder In activeinfo.GetDirectories
 
-                EList.Items.Add(folder.Name).SubItems.Add("FOLDER")
+                EList.Items.Add(folder.Name, ImagesList.Images.Count() - 2).SubItems.Add("FOLDER")
 
             Next
             ' End active folder code
@@ -46,13 +46,13 @@ Public Class AllyMods
             ' Inactive folder code
             For Each file In inactiveinfo.GetFiles
 
-                DList.Items.Add(Path.GetFileNameWithoutExtension(file.ToString)).SubItems.Add(file.Extension.Remove(0, 1).ToUpper)
+                DList.Items.Add(Path.GetFileNameWithoutExtension(file.ToString), ImagesList.Images.Count() - 1).SubItems.Add(file.Extension.Remove(0, 1).ToUpper)
 
             Next
 
             For Each folder In inactiveinfo.GetDirectories
 
-                DList.Items.Add(folder.Name).SubItems.Add("FOLDER")
+                DList.Items.Add(folder.Name, ImagesList.Images.Count() - 2).SubItems.Add("FOLDER")
 
             Next
             ' End inactive folder code
@@ -243,7 +243,7 @@ Public Class AllyMods
         RefreshList()
     End Sub
 
-    Private Sub EList_DragDrop(sender As Object, e As DragEventArgs) Handles EList.DragDrop
+    Private Sub ListView1_DragDrop(sender As Object, e As DragEventArgs) Handles EList.DragDrop
         Dim files() As String = e.Data.GetData(DataFormats.FileDrop)
         For Each path In files
 
@@ -268,13 +268,13 @@ Public Class AllyMods
         Next
     End Sub
 
-    Private Sub EList_DragEnter(sender As Object, e As DragEventArgs) Handles EList.DragEnter
+    Private Sub ListView1_DragEnter(sender As Object, e As DragEventArgs) Handles EList.DragEnter
         If e.Data.GetDataPresent(DataFormats.FileDrop) Then
             e.Effect = DragDropEffects.Copy
         End If
     End Sub
 
-    Private Sub DList_DragDrop(sender As Object, e As DragEventArgs) Handles DList.DragDrop
+    Private Sub DList_DragDrop(sender As Object, e As DragEventArgs)
         Dim files() As String = e.Data.GetData(DataFormats.FileDrop)
         For Each path In files
 
@@ -300,7 +300,7 @@ Public Class AllyMods
         Next
     End Sub
 
-    Private Sub DList_DragEnter(sender As Object, e As DragEventArgs) Handles DList.DragEnter
+    Private Sub DList_DragEnter(sender As Object, e As DragEventArgs)
         If e.Data.GetDataPresent(DataFormats.FileDrop) Then
             e.Effect = DragDropEffects.Copy
         End If
@@ -402,13 +402,13 @@ Public Class AllyMods
 
     ' Makes sure To deselect any items that are selected On the contrary form When the enter focus Event Is activated On one Of them (Avoiding confusion Of simultaneous selection)
     ' -------------------------------------------------------------------------------------------
-    Private Sub EList_Enter(sender As Object, e As EventArgs) Handles EList.Enter
+    Private Sub ListView1_Enter(sender As Object, e As EventArgs) Handles EList.Enter
         For Each selecteditem As ListViewItem In DList.SelectedItems
             selecteditem.Selected = 0
         Next
     End Sub
 
-    Private Sub DList_Enter(sender As Object, e As EventArgs) Handles DList.Enter
+    Private Sub DList_Enter(sender As Object, e As EventArgs)
         For Each selecteditem As ListViewItem In EList.SelectedItems
             selecteditem.Selected = 0
         Next
@@ -426,4 +426,6 @@ Public Class AllyMods
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Application.Exit()
     End Sub
+
+
 End Class
