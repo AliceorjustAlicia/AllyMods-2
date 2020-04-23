@@ -50,7 +50,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>zxQrYl9wpntqxrv2yrL03UX6BLDej9nrN0tEVCbS4ao=</dsig:DigestValue>
+        <dsig:DigestValue>P4xzS4EtkUrhBZ5/uolbyalTpf8IYo/p0vYhcsgko5A=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -103,6 +103,24 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>REGsCIubyH6zKL9NO1Z2OTE1t6g7xkWcKEUxombc5p4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\directory.png" size="5048">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>KbsN1Liibl6eP2M6gBe3kCcfEyD7+e4RVlDrJUTuBXk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\file.png" size="55252">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>bBpPYzO0KJYWWFVG383khAukwrl24x6L4hXoR+QsNZY=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

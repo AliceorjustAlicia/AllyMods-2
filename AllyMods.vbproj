@@ -204,6 +204,8 @@
   <ItemGroup>
     <Content Include="allyconsole.ico" />
     <Content Include="AllyMods2.ico" />
+    <Content Include="Resources\directory.png" />
+    <Content Include="Resources\file.png" />
     <None Include="Resources\divider.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
