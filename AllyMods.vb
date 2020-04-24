@@ -94,6 +94,7 @@ Public Class AllyMods
             Me.HeaderColor = AllyMods2.My.Settings.headerColor
             Me.SmallLineColor1 = AllyMods2.My.Settings.headerColor
             Me.SmallLineColor2 = AllyMods2.My.Settings.headerColor
+            Me.Refresh()
         End If
 
         If AllyMods2.My.Settings.borderModifier = True Then

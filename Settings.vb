@@ -59,12 +59,17 @@
 
     Private Sub ColorWheel2_ColorChanged(sender As Object, e As EventArgs) Handles ColorWheel2.ColorChanged
         Me.HeaderColor = ColorWheel2.Color
-        AllyMods.SmallLineColor1 = My.Settings.MainColor
-        AllyMods.SmallLineColor2 = My.Settings.MainColor
+        AllyMods.HeaderColor = ColorWheel2.Color
+
+        AllyMods.Refresh()
+
         HexEditor2.Text = ColorTranslator.ToHtml(ColorWheel2.Color)
+
         My.Settings.headerColor = ColorWheel2.Color
         AllyMods.HeaderColor = My.Settings.headerColor
-        AllyMods.Refresh()
+        AllyMods.SmallLineColor1 = My.Settings.headerColor
+        AllyMods.SmallLineColor2 = My.Settings.headerColor
+
         Me.Refresh()
     End Sub
 
