@@ -22,16 +22,13 @@
             ColorWheel3.Color = My.Settings.borderColor
             HexEditor3.Visible = True
         End If
-    End Sub
 
-    Private Sub ColorWheel1_ColorChanged_1(sender As Object, e As EventArgs) Handles ColorWheel.ColorChanged
-        Me.BackColor = ColorWheel.Color
-        My.Settings.MainColor = ColorWheel.Color
-        Me.BackColor = My.Settings.MainColor
-        HexEditor1.Text = ColorTranslator.ToHtml(ColorWheel.Color)
-        AllyMods.BackColor = My.Settings.MainColor
-        AllyMods.Refresh()
-        Me.Refresh()
+        If My.Settings.fontModifier = True Then
+            fontSwitch.Switched = True
+            ColorWheel4.Visible = True
+            ColorWheel4.Color = My.Settings.fontColor
+            HexEditor4.Visible = True
+        End If
     End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
@@ -57,6 +54,16 @@
 
     End Sub
 
+    Private Sub ColorWheel1_ColorChanged_1(sender As Object, e As EventArgs) Handles ColorWheel.ColorChanged
+        Me.BackColor = ColorWheel.Color
+        My.Settings.MainColor = ColorWheel.Color
+        Me.BackColor = My.Settings.MainColor
+        HexEditor1.Text = ColorTranslator.ToHtml(ColorWheel.Color)
+        AllyMods.BackColor = My.Settings.MainColor
+        AllyMods.Refresh()
+        Me.Refresh()
+    End Sub
+
     Private Sub ColorWheel2_ColorChanged(sender As Object, e As EventArgs) Handles ColorWheel2.ColorChanged
         Me.HeaderColor = ColorWheel2.Color
         AllyMods.HeaderColor = ColorWheel2.Color
@@ -71,6 +78,27 @@
         AllyMods.SmallLineColor2 = My.Settings.headerColor
 
         Me.Refresh()
+    End Sub
+    Private Sub ColorWheel3_ColorChanged(sender As Object, e As EventArgs) Handles ColorWheel3.ColorChanged
+        Me.BorderColor = ColorWheel3.Color
+        My.Settings.borderColor = ColorWheel3.Color
+        HexEditor3.Text = ColorTranslator.ToHtml(ColorWheel3.Color)
+        AllyMods.BorderColor = My.Settings.borderColor
+        AllyMods.Refresh()
+        Me.Refresh()
+    End Sub
+    Private Sub ColorWheel4_ColorChanged(sender As Object, e As EventArgs) Handles ColorWheel4.ColorChanged
+        My.Settings.fontColor = ColorWheel4.Color
+        HexEditor4.Text = ColorTranslator.ToHtml(ColorWheel4.Color)
+        AllyMods.ForeColor = My.Settings.fontColor
+        lbl1.ForeColor = My.Settings.fontColor
+        lbl2.ForeColor = My.Settings.fontColor
+        lbl3.ForeColor = My.Settings.fontColor
+        lbl4.ForeColor = My.Settings.fontColor
+        AllyMods.Refresh()
+        Me.Refresh()
+
+
     End Sub
 
     Private Sub HeaderSwitch_MouseClick(sender As Object, e As MouseEventArgs) Handles sbgSwitch.MouseClick
@@ -116,23 +144,55 @@
             My.Settings.Save()
             Me.Refresh()
             AllyMods.Refresh()
+
+
         End If
     End Sub
 
-    Private Sub ColorWheel3_ColorChanged(sender As Object, e As EventArgs) Handles ColorWheel3.ColorChanged
-        Me.BorderColor = ColorWheel3.Color
-        My.Settings.borderColor = ColorWheel3.Color
-        HexEditor3.Text = ColorTranslator.ToHtml(ColorWheel3.Color)
-        AllyMods.BorderColor = My.Settings.borderColor
-        AllyMods.Refresh()
-        Me.Refresh()
+    Private Sub fontSwitch_MouseClick(sender As Object, e As MouseEventArgs) Handles fontSwitch.MouseClick
+        If fontSwitch.Switched = True Then
+            My.Settings.fontModifier = True
+            My.Settings.Save()
+            ColorWheel4.Visible = True
+            HexEditor4.Visible = True
+            Me.ForeColor = My.Settings.borderColor
+            AllyMods.ForeColor = My.Settings.borderColor
+            Me.Refresh()
+            AllyMods.Refresh()
+
+            lbl1.ForeColor = ColorWheel4.Color
+            lbl2.ForeColor = ColorWheel4.Color
+            lbl3.ForeColor = ColorWheel4.Color
+            lbl4.ForeColor = ColorWheel4.Color
+        Else
+            My.Settings.fontModifier = False
+            HexEditor4.Visible = False
+            Me.ForeColor = Color.Gray
+            AllyMods.ForeColor = Color.Gray
+            ColorWheel4.Visible = False
+            My.Settings.Save()
+            Me.Refresh()
+            AllyMods.Refresh()
+
+            lbl1.ForeColor = Color.Gray
+            lbl2.ForeColor = Color.Gray
+            lbl3.ForeColor = Color.Gray
+            lbl4.ForeColor = Color.Gray
+
+        End If
+
     End Sub
+
     Private Sub HexEditor1_TextChanged(sender As Object) Handles HexEditor1.TextChanged
         Try
             ColorWheel.Color = ColorTranslator.FromHtml(HexEditor1.Text)
+            My.Settings.MainColor = ColorWheel.Color
+            My.Settings.Save()
 
         Catch ex As Exception
-
+            If Not HexEditor1.Text.Contains("#") Then
+                HexEditor1.Text = "#" + HexEditor1.Text
+            End If
         End Try
 
     End Sub
@@ -140,16 +200,36 @@
     Private Sub HexEditor2_TextChanged(sender As Object) Handles HexEditor2.TextChanged
         Try
             ColorWheel2.Color = ColorTranslator.FromHtml(HexEditor2.Text)
+            My.Settings.headerColor = ColorWheel2.Color
+            My.Settings.Save()
         Catch ex As Exception
-
+            If Not HexEditor2.Text.Contains("#") Then
+                HexEditor2.Text = "#" + HexEditor2.Text
+            End If
         End Try
     End Sub
 
     Private Sub HexEditor3_TextChanged(sender As Object) Handles HexEditor3.TextChanged
         Try
             ColorWheel3.Color = ColorTranslator.FromHtml(HexEditor3.Text)
+            My.Settings.borderColor = ColorWheel3.Color
+            My.Settings.Save()
         Catch ex As Exception
+            If Not HexEditor3.Text.Contains("#") Then
+                HexEditor3.Text = "#" + HexEditor3.Text
+            End If
+        End Try
+    End Sub
 
+    Private Sub HexEditor4_TextChanged(sender As Object) Handles HexEditor4.TextChanged
+        Try
+            ColorWheel4.Color = ColorTranslator.FromHtml(HexEditor4.Text)
+            My.Settings.fontColor = ColorWheel4.Color
+            My.Settings.Save()
+        Catch ex As Exception
+            If Not HexEditor4.Text.Contains("#") Then
+                HexEditor4.Text = "#" + HexEditor4.Text
+            End If
         End Try
     End Sub
 End Class

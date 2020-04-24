@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AllyMods 2.exe" size="1221032">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AllyMods 2.exe" size="1225128">
       <assemblyIdentity name="AllyMods 2" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>+4JuFVxH4ufhf8/BDABtngyXXoCdS7UZ7Vx12P0s/uQ=</dsig:DigestValue>
+        <dsig:DigestValue>/z9rO09RDGssQbJX6gVnC1eKXEMUBe8NUyXkdFqrxqQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -87,13 +87,13 @@
       <dsig:DigestValue>uS4Xlreag00bs3Zo8koGnRBBD3xda5pVEPkKXOeuhww=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="AllyMods 2.exe.config" size="2761">
+  <file name="AllyMods 2.exe.config" size="2999">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>MbAL257QOkYRJWFuoHH7Exwscfk4s3I5SaOdOzEQnkY=</dsig:DigestValue>
+      <dsig:DigestValue>DCbR0t5p+6YdhxTQqOii0WmyzDadiQ/NPzGGvvim+SY=</dsig:DigestValue>
     </hash>
   </file>
   <file name="AllyMods2.ico" size="107242">

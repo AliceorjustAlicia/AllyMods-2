@@ -101,6 +101,13 @@ Public Class AllyMods
             Me.BorderColor = AllyMods2.My.Settings.borderColor
         End If
 
+        If AllyMods2.My.Settings.fontModifier = True Then
+            Settings.lbl1.ForeColor = AllyMods2.My.Settings.fontColor
+            Settings.lbl2.ForeColor = AllyMods2.My.Settings.fontColor
+            Settings.lbl3.ForeColor = AllyMods2.My.Settings.fontColor
+            Settings.lbl4.ForeColor = AllyMods2.My.Settings.fontColor
+        End If
+
 
         '--------- Enable drag-and-drop features
         EList.AllowDrop = True

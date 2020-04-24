@@ -37,6 +37,10 @@ Partial Class Settings
         Me.HexEditor1 = New MetroSet_UI.Controls.MetroSetTextBox()
         Me.HexEditor2 = New MetroSet_UI.Controls.MetroSetTextBox()
         Me.HexEditor3 = New MetroSet_UI.Controls.MetroSetTextBox()
+        Me.fontSwitch = New MetroSet_UI.Controls.MetroSetSwitch()
+        Me.HexEditor4 = New MetroSet_UI.Controls.MetroSetTextBox()
+        Me.ColorWheel4 = New Cyotek.Windows.Forms.ColorWheel()
+        Me.lbl4 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnClose, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -82,6 +86,7 @@ Partial Class Settings
         Me.lbl1.Size = New System.Drawing.Size(67, 29)
         Me.lbl1.TabIndex = 13
         Me.lbl1.Text = "Main color"
+        Me.lbl1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lbl2
         '
@@ -157,6 +162,7 @@ Partial Class Settings
         Me.lbl3.Size = New System.Drawing.Size(76, 29)
         Me.lbl3.TabIndex = 20
         Me.lbl3.Text = "Border color"
+        Me.lbl3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'ColorWheel3
         '
@@ -281,6 +287,79 @@ Partial Class Settings
         Me.HexEditor3.Visible = False
         Me.HexEditor3.WatermarkText = ""
         '
+        'fontSwitch
+        '
+        Me.fontSwitch.BackColor = System.Drawing.Color.Transparent
+        Me.fontSwitch.BackgroundColor = System.Drawing.Color.Empty
+        Me.fontSwitch.BorderColor = System.Drawing.Color.FromArgb(CType(CType(165, Byte), Integer), CType(CType(159, Byte), Integer), CType(CType(147, Byte), Integer))
+        Me.fontSwitch.CheckColor = System.Drawing.Color.FromArgb(CType(CType(65, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(225, Byte), Integer))
+        Me.fontSwitch.CheckState = MetroSet_UI.Enums.CheckState.Unchecked
+        Me.fontSwitch.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.fontSwitch.DisabledBorderColor = System.Drawing.Color.FromArgb(CType(CType(205, Byte), Integer), CType(CType(205, Byte), Integer), CType(CType(205, Byte), Integer))
+        Me.fontSwitch.DisabledCheckColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(225, Byte), Integer))
+        Me.fontSwitch.DisabledUnCheckColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(205, Byte), Integer), CType(CType(205, Byte), Integer), CType(CType(205, Byte), Integer))
+        Me.fontSwitch.Location = New System.Drawing.Point(338, 226)
+        Me.fontSwitch.Name = "fontSwitch"
+        Me.fontSwitch.Size = New System.Drawing.Size(58, 22)
+        Me.fontSwitch.Style = MetroSet_UI.Design.Style.Light
+        Me.fontSwitch.StyleManager = Nothing
+        Me.fontSwitch.Switched = False
+        Me.fontSwitch.SymbolColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.fontSwitch.TabIndex = 24
+        Me.fontSwitch.Text = "MetroSetSwitch1"
+        Me.fontSwitch.ThemeAuthor = "Narwin"
+        Me.fontSwitch.ThemeName = "MetroLite"
+        Me.fontSwitch.UnCheckColor = System.Drawing.Color.FromArgb(CType(CType(155, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(155, Byte), Integer))
+        '
+        'HexEditor4
+        '
+        Me.HexEditor4.AutoCompleteCustomSource = Nothing
+        Me.HexEditor4.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None
+        Me.HexEditor4.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None
+        Me.HexEditor4.BorderColor = System.Drawing.Color.FromArgb(CType(CType(155, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.HexEditor4.DisabledBackColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.HexEditor4.DisabledBorderColor = System.Drawing.Color.FromArgb(CType(CType(155, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.HexEditor4.DisabledForeColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer))
+        Me.HexEditor4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.HexEditor4.HoverColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.HexEditor4.Image = Nothing
+        Me.HexEditor4.Lines = Nothing
+        Me.HexEditor4.Location = New System.Drawing.Point(335, 253)
+        Me.HexEditor4.MaxLength = 32767
+        Me.HexEditor4.Multiline = False
+        Me.HexEditor4.Name = "HexEditor4"
+        Me.HexEditor4.ReadOnly = False
+        Me.HexEditor4.Size = New System.Drawing.Size(60, 30)
+        Me.HexEditor4.Style = MetroSet_UI.Design.Style.Light
+        Me.HexEditor4.StyleManager = Nothing
+        Me.HexEditor4.TabIndex = 25
+        Me.HexEditor4.Text = "#"
+        Me.HexEditor4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.HexEditor4.ThemeAuthor = "Narwin"
+        Me.HexEditor4.ThemeName = "MetroLite"
+        Me.HexEditor4.UseSystemPasswordChar = False
+        Me.HexEditor4.Visible = False
+        Me.HexEditor4.WatermarkText = ""
+        '
+        'ColorWheel4
+        '
+        Me.ColorWheel4.Color = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.ColorWheel4.Location = New System.Drawing.Point(401, 175)
+        Me.ColorWheel4.Name = "ColorWheel4"
+        Me.ColorWheel4.Size = New System.Drawing.Size(133, 122)
+        Me.ColorWheel4.TabIndex = 26
+        Me.ColorWheel4.Visible = False
+        '
+        'lbl4
+        '
+        Me.lbl4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl4.Location = New System.Drawing.Point(330, 190)
+        Me.lbl4.Name = "lbl4"
+        Me.lbl4.Size = New System.Drawing.Size(76, 29)
+        Me.lbl4.TabIndex = 27
+        Me.lbl4.Text = "Font color"
+        Me.lbl4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'Settings
         '
         Me.AllowResize = False
@@ -290,6 +369,10 @@ Partial Class Settings
         Me.BackgroundColor = System.Drawing.Color.Empty
         Me.BorderColor = System.Drawing.Color.MediumPurple
         Me.ClientSize = New System.Drawing.Size(553, 336)
+        Me.Controls.Add(Me.lbl4)
+        Me.Controls.Add(Me.ColorWheel4)
+        Me.Controls.Add(Me.HexEditor4)
+        Me.Controls.Add(Me.fontSwitch)
         Me.Controls.Add(Me.HexEditor3)
         Me.Controls.Add(Me.HexEditor2)
         Me.Controls.Add(Me.HexEditor1)
@@ -337,4 +420,8 @@ Partial Class Settings
     Friend WithEvents HexEditor1 As MetroSet_UI.Controls.MetroSetTextBox
     Friend WithEvents HexEditor2 As MetroSet_UI.Controls.MetroSetTextBox
     Friend WithEvents HexEditor3 As MetroSet_UI.Controls.MetroSetTextBox
+    Friend WithEvents fontSwitch As MetroSet_UI.Controls.MetroSetSwitch
+    Friend WithEvents HexEditor4 As MetroSet_UI.Controls.MetroSetTextBox
+    Friend WithEvents ColorWheel4 As Cyotek.Windows.Forms.ColorWheel
+    Friend WithEvents lbl4 As Label
 End Class

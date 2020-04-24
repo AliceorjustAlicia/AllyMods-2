@@ -134,6 +134,29 @@ Namespace My
                 Me("borderColor") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property fontModifier() As Boolean
+            Get
+                Return CType(Me("fontModifier"),Boolean)
+            End Get
+            Set
+                Me("fontModifier") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property fontColor() As Global.System.Drawing.Color
+            Get
+                Return CType(Me("fontColor"),Global.System.Drawing.Color)
+            End Get
+            Set
+                Me("fontColor") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
