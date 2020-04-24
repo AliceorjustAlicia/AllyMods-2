@@ -4,7 +4,7 @@
   <img width="800" height="447" src="https://i.imgur.com/B9BXEfn.png">
 </p>
 
-# [DOWNLOAD LATEST BUILD](https://github.com/AliceorjustAlicia/AllyMods-2/releases/tag/Beeta)
+# [DOWNLOAD LATEST BUILD](https://github.com/AliceorjustAlicia/AllyMods-2/releases/tag/Stable)
 
 Here before you lays the fine magestry of modding on The Sims 4!
 
